@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e85dfbcc-2985-4530-b9ec-76bf858cc391" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/list/SingleLinkedListDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/queue/ArrayQueueDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/queue/CircleArrayQueueDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/sparse/array/SparseArray.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/sparse/array/SparseArraySaveIntoDisk.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/list/DoubleLinkedListDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/list/Josephu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/stack/ArrayStackDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/stack/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/stack/LinkedListStackDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/stack/PolandNotation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,13 +96,13 @@
       <recent name="com.sen.data.structure" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SingleLinkedListDemo">
-    <configuration name="ArrayQueueDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.queue.ArrayQueueDemo" />
+  <component name="RunManager" selected="Application.PolandNotation">
+    <configuration name="ArrayStackDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.stack.ArrayStackDemo" />
       <module name="thorough-algorithms" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sen.data.structure.queue.*" />
+          <option name="PATTERN" value="com.sen.data.structure.stack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,12 +110,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CircleArrayQueueDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.queue.CircleArrayQueueDemo" />
+    <configuration name="Calculator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.stack.Calculator" />
       <module name="thorough-algorithms" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sen.data.structure.queue.*" />
+          <option name="PATTERN" value="com.sen.data.structure.stack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -121,8 +123,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SingleLinkedListDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.list.SingleLinkedListDemo" />
+    <configuration name="Josephu" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.list.Josephu" />
       <module name="thorough-algorithms" />
       <extension name="coverage">
         <pattern>
@@ -134,12 +136,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SparseArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.sparse.array.SparseArray" />
+    <configuration name="LinkedListStackDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.stack.LinkedListStackDemo" />
       <module name="thorough-algorithms" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sen.data.structure.sparse.array.*" />
+          <option name="PATTERN" value="com.sen.data.structure.stack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -147,12 +149,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SparseArraySaveIntoDisk" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.sparse.array.SparseArraySaveIntoDisk" />
+    <configuration name="PolandNotation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.stack.PolandNotation" />
       <module name="thorough-algorithms" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sen.data.structure.sparse.array.*" />
+          <option name="PATTERN" value="com.sen.data.structure.stack.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -162,11 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SingleLinkedListDemo" />
-        <item itemvalue="Application.CircleArrayQueueDemo" />
-        <item itemvalue="Application.ArrayQueueDemo" />
-        <item itemvalue="Application.SparseArraySaveIntoDisk" />
-        <item itemvalue="Application.SparseArray" />
+        <item itemvalue="Application.PolandNotation" />
+        <item itemvalue="Application.Calculator" />
+        <item itemvalue="Application.LinkedListStackDemo" />
+        <item itemvalue="Application.ArrayStackDemo" />
+        <item itemvalue="Application.Josephu" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +195,8 @@
       <option name="presentableId" value="Default" />
       <updated>1578681858168</updated>
       <workItem from="1578681859598" duration="580000" />
-      <workItem from="1578731544997" duration="23935000" />
+      <workItem from="1578731544997" duration="24579000" />
+      <workItem from="1578811418149" duration="23635000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1578682389772</created>
@@ -202,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578682389772</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Linked List">
+      <created>1578769007751</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1578769007751</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,69 +232,80 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+    <MESSAGE value="Linked List" />
+    <option name="LAST_COMMIT_MESSAGE" value="Linked List" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1578754455689">
+    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1578838973527">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1578754455689" />
+    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1578838973527" />
     <state x="389" y="91" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1578681942789">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="389" y="91" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1536.824@0.0.1536.824" timestamp="1578681942789" />
-    <state x="372" y="3" key="CommitChangelistDialog2" timestamp="1578682389192">
+    <state x="372" y="3" key="CommitChangelistDialog2" timestamp="1578769006683">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="372" y="3" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1578682389192" />
-    <state width="485" height="466" key="DebuggerActiveHint" timestamp="1578736377397">
+    <state x="372" y="3" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1578769006683" />
+    <state width="485" height="466" key="DebuggerActiveHint" timestamp="1578818122161">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="485" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1578736377397" />
-    <state width="1493" height="235" key="GridCell.Tab.0.bottom" timestamp="1578768934346">
+    <state width="485" height="466" key="DebuggerActiveHint/0.0.1536.824@0.0.1536.824" timestamp="1578818122161" />
+    <state width="1493" height="235" key="GridCell.Tab.0.bottom" timestamp="1578855788383">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="235" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578768934346" />
-    <state width="1493" height="235" key="GridCell.Tab.0.center" timestamp="1578768934346">
+    <state width="1493" height="235" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578855788383" />
+    <state width="1493" height="235" key="GridCell.Tab.0.center" timestamp="1578855788383">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="235" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1578768934346" />
-    <state width="1493" height="235" key="GridCell.Tab.0.left" timestamp="1578768934346">
+    <state width="1493" height="235" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1578855788383" />
+    <state width="1493" height="235" key="GridCell.Tab.0.left" timestamp="1578855788383">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="235" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1578768934346" />
-    <state width="1493" height="235" key="GridCell.Tab.0.right" timestamp="1578768934346">
+    <state width="1493" height="235" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1578855788383" />
+    <state width="1493" height="235" key="GridCell.Tab.0.right" timestamp="1578855788383">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="235" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1578768934346" />
-    <state width="1493" height="262" key="GridCell.Tab.1.bottom" timestamp="1578768760782">
+    <state width="1493" height="235" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1578855788383" />
+    <state width="1493" height="262" key="GridCell.Tab.1.bottom" timestamp="1578855757878">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="262" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578768760782" />
-    <state width="1493" height="262" key="GridCell.Tab.1.center" timestamp="1578768760782">
+    <state width="1493" height="262" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1578855757878" />
+    <state width="1493" height="262" key="GridCell.Tab.1.center" timestamp="1578855757878">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="262" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1578768760782" />
-    <state width="1493" height="262" key="GridCell.Tab.1.left" timestamp="1578768760782">
+    <state width="1493" height="262" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1578855757878" />
+    <state width="1493" height="262" key="GridCell.Tab.1.left" timestamp="1578855757878">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="262" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1578768760782" />
-    <state width="1493" height="262" key="GridCell.Tab.1.right" timestamp="1578768760782">
+    <state width="1493" height="262" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1578855757878" />
+    <state width="1493" height="262" key="GridCell.Tab.1.right" timestamp="1578855757878">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="262" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1578768760782" />
+    <state width="1493" height="262" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1578855757878" />
     <state x="270" y="38" width="1038" height="786" key="SettingsEditor" timestamp="1578682112354">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="38" width="1038" height="786" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1578682112354" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1578682392652">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1578813112444">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1578682392652" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1578813112444" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1578769010337">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1578769010337" />
     <state x="178" y="23" key="new project wizard" timestamp="1578681927268">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="178" y="23" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1578681927268" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1578842660359">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1578842660359" />
   </component>
 </project>
