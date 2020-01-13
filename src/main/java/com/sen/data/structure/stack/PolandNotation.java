@@ -30,10 +30,15 @@ public class PolandNotation {
        思路:
             1.先把中缀表达式字符串转换成字符串集合方便操作
             2.将1+((2+3)*4)-5中缀表达式转换成后缀表达式1 2 3 + 4 * + 5 -
+            3.把中缀缀表达式List：[1, +, (, (, 2, +, 3, ), *, 4, ), -, 5]
+              转换成后缀表达式List:[1,2,3,+,4,*,+,5,-]
        */
         String expression = "1+((2+3)*4)-5";
         List<String> infixExpressionList = toInfixExpression(expression);
         System.out.println(infixExpressionList);
+        List<String> suffixExpression = toSuffixExpression(infixExpressionList);
+        System.out.println(suffixExpression);
+        System.out.println(calculate(suffixExpression));
     }
 
     /**
@@ -49,6 +54,7 @@ public class PolandNotation {
 
     /**
      * 利用逆波兰表达式计算
+     *
      * @param stringList 逆波兰表达式
      * @return
      */
@@ -74,7 +80,7 @@ public class PolandNotation {
                     result = num1 * num2;
                 } else if ("/".equals(str)) {
                     result = num1 / num2;
-                }else {
+                } else {
                     throw new RuntimeException("Illegal Operator!");
                 }
                 //把运算结果压回栈中
@@ -86,6 +92,7 @@ public class PolandNotation {
 
     /**
      * 生成中序表达式集合
+     *
      * @param infix 中序表达式
      * @return 中序表达式字符串集合
      */
@@ -96,7 +103,7 @@ public class PolandNotation {
         do {
             char ch = infix.charAt(point);
             //当前字符位非数字时
-            if (ch< 48 || ch> 57) {
+            if (ch < 48 || ch > 57) {
                 infixExpressionList.add(String.valueOf(ch));
                 //后移指针
                 point++;
@@ -114,5 +121,79 @@ public class PolandNotation {
             }
         } while (point < infix.length());
         return infixExpressionList;
+    }
+
+    /**
+     * 中缀表达式集合和转后缀表达式集合
+     *
+     * @param expressions 中缀表达式集合
+     * @return 后缀表达式集合
+     */
+    private static List<String> toSuffixExpression(List<String> expressions) {
+        //创建存放操作符的栈
+        Stack<String> stack = new Stack<>();
+        //第二个栈替换位集合，因为第二栈只有入栈的操作没有出栈的操作所以用集合替换方便操作
+        List<String> suffix = new ArrayList<>();
+        //遍历中缀表达式集合
+        for (String expression : expressions) {
+            //如果是操作数直接加入集合
+            if (expression.matches("\\d+")) {
+                suffix.add(expression);
+                //如果是左括号直接栈
+            } else if ("(".equals(expression)) {
+                stack.push(expression);
+                //如果是右括号把栈中的栈顶操作符弹出并加入集合中，直到遇到左括号
+            } else if (")".equals(expression)) {
+                while (!stack.isEmpty() && !"(".equals(stack.peek())) {
+                    suffix.add(stack.pop());
+                }
+                //把栈顶的左括号弹出
+                stack.pop();
+                // 如果是操作符
+            } else {
+                //比较操作符的优先级，当前的操作符优先级小于或等于栈顶的操作符的优先级，把栈顶元素弹出并加入集合，直到
+                // 当前操作符优先级比栈操作符顶优先级高或者栈空才能入栈
+                while (!stack.isEmpty() && Operation.getPriority(expression) <= Operation.getPriority(stack.peek())) {
+                    suffix.add(stack.pop());
+                }
+                //把当前操作符入栈
+                stack.push(expression);
+            }
+        }
+        //把栈的元素依次弹出并加入到集合中
+        while (!stack.isEmpty()) {
+            suffix.add(stack.pop());
+        }
+        //最后因为集合是先进先出的所以集合的表达式的顺序就是stack的逆序
+        return suffix;
+    }
+
+    /**
+     * 用于判断操作符的优先级
+     */
+    private static class Operation {
+        private static final int ADD = 1;
+        private static final int SUB = 1;
+        private static final int MUL = 2;
+        private static final int DIV = 2;
+
+        static int getPriority(String operator) {
+            int result = 0;
+            switch (operator) {
+                case "+":
+                    result = ADD;
+                    break;
+                case "-":
+                    result = SUB;
+                    break;
+                case "*":
+                    result = MUL;
+                    break;
+                case "/":
+                    result = DIV;
+                    break;
+            }
+            return result;
+        }
     }
 }
