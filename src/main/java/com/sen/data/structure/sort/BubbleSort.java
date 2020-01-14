@@ -3,6 +3,7 @@ package com.sen.data.structure.sort;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.function.Consumer;
 
@@ -17,7 +18,7 @@ public class BubbleSort {
         // int[] arr = {3, 9, -1, 10, -2};
         // int[] arr = {1,2,4,5,6,7};
         // 冒泡排序150000条数据花费时间：34S,时间复杂度O(n^2)
-        testPerformance("冒泡排序",BubbleSort::bubbleSort);
+        testPerformance("冒泡排序", BubbleSort::bubbleSort);
     }
 
     public static void testPerformance(String sortName, Consumer<int[]> consumer) {
@@ -31,6 +32,22 @@ public class BubbleSort {
         Instant end = Instant.now();
         System.out.println(sortName + "150000条数据花费时间：" + Duration.between(start, end).get(ChronoUnit.SECONDS) + "S");
     }
+
+    public static void testPerformance(String sortName, Consumer<int[]> consumer, int count,boolean isPrint) {
+        int[] arr = new int[count];
+        Random random = new Random(System.currentTimeMillis());
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(count * 10);
+        }
+        Instant start = Instant.now();
+        consumer.accept(arr);
+        Instant end = Instant.now();
+        System.out.println(sortName + count + "条数据花费时间：" + Duration.between(start, end).get(ChronoUnit.SECONDS) + "S");
+        if (isPrint) {
+            System.out.println(Arrays.toString(arr));
+        }
+    }
+
 
     /**
      * 冒泡排序
