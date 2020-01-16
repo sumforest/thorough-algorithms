@@ -33,17 +33,32 @@ public class BinaryTreeDemo {
         // System.out.println("中序查找");
         // System.out.println(binaryTree.infixOrderSearch(5));
 
-        System.out.println("后序查找");
-        System.out.println(binaryTree.postOrderSearch(5));
+        // System.out.println("后序查找");
+        // System.out.println(binaryTree.postOrderSearch(5));
+
+        // System.out.println("删除前：前序遍历");
+        // binaryTree.preOrder();
+        // binaryTree.delete(5);
+        // System.out.println("删除后：前序遍历");
+        // binaryTree.preOrder();
+
+        System.out.println("删除前：前序遍历");
+        binaryTree.preOrder();
+        binaryTree.deleteInAction(3);
+        System.out.println("删除后：前序遍历");
+        binaryTree.preOrder();
     }
 
-    private static class BinaryTree{
+    private static class BinaryTree {
         HeroNode root;
 
         public BinaryTree(HeroNode root) {
             this.root = root;
         }
 
+        /**
+         * 前序遍历
+         */
         public void preOrder() {
             if (root == null) {
                 System.err.println("Current BinaryTree is Empty");
@@ -52,6 +67,9 @@ public class BinaryTreeDemo {
             root.preOrder();
         }
 
+        /**
+         * 中序遍历
+         */
         public void infixOrder() {
             if (root == null) {
                 System.err.println("Current BinaryTree is Empty");
@@ -60,7 +78,10 @@ public class BinaryTreeDemo {
             root.infixOrder();
         }
 
-        public void postOrder(){
+        /**
+         * 后序遍历
+         */
+        public void postOrder() {
             if (root == null) {
                 System.err.println("Current BinaryTree is Empty");
                 return;
@@ -68,6 +89,12 @@ public class BinaryTreeDemo {
             root.postOrder();
         }
 
+        /**
+         * 前序查找
+         *
+         * @param no
+         * @return
+         */
         public HeroNode preOrderSearch(int no) {
             if (root == null) {
                 return null;
@@ -75,6 +102,12 @@ public class BinaryTreeDemo {
             return root.preOrderSearch(no);
         }
 
+        /**
+         * 中序查找
+         *
+         * @param no
+         * @return
+         */
         public HeroNode infixOrderSearch(int no) {
             if (root == null) {
                 return null;
@@ -82,11 +115,77 @@ public class BinaryTreeDemo {
             return root.infixOrderSearch(no);
         }
 
+        /**
+         * 后序查找
+         *
+         * @param no
+         * @return
+         */
         public HeroNode postOrderSearch(int no) {
             if (root == null) {
                 return null;
             }
             return root.postOrderSearch(no);
+        }
+
+        /**
+         * 删除节点
+         * 说明：
+         * 1.要删除的节点为根节点则整个二叉树置空
+         * 2.删除的节点为非叶子节点则整个子树置空
+         *
+         * @param no {@link HeroNode}
+         */
+        public void delete(int no) {
+            //如果根节点为空，则操作失败
+            if (root == null) {
+                System.err.println("Current is empty!");
+                return;
+            }
+            //如果删除的节点为根节点
+            if (root.no == no) {
+                root = null;
+            }
+            //不是则递归删除
+            else {
+                root.delete(no);
+            }
+        }
+
+        /**
+         * 删除节点
+         * 说明：
+         * 1.如果删除的节点是叶子节点直接删除
+         * 2.如果删除的节点是非叶子节点并且只有一个子节点，则该子节点替代被删除节点
+         * 3.如果删除的节点是非叶子节点并且有左右两个子节点，那么左子节点替换被删除节点
+         *
+         * @param no
+         */
+        public void deleteInAction(int no) {
+            if (root == null) {
+                System.err.println("Current BinaryTree is Empty!");
+                return;
+            }
+            //要删除的节点为根节点
+            if (root.no == no) {
+                //左子节点为空，右子节点不为空
+                if (root.left == null && root.right != null) {
+                    //右子节点替换父节点
+                    root = root.right;
+                } else {
+                    //当左右子节点都存在时
+                    if (root.left != null && root.right != null) {
+                        //把右子节点作为左子节点的右子节点
+                        root.left.right = root.right;
+                    }
+                    //左子节点替换父节点
+                    root = root.left;
+                }
+            }
+            //要删除的节点不是根节点，则递归删除
+            else {
+                root.deleteInAction(no);
+            }
         }
     }
 
@@ -121,7 +220,7 @@ public class BinaryTreeDemo {
         /**
          * 二叉树前序遍历
          */
-        public void preOrder(){
+        public void preOrder() {
             System.out.println(this);
             if (this.left != null) {
                 //向左递归遍历
@@ -151,7 +250,7 @@ public class BinaryTreeDemo {
         /**
          * 二叉树后续遍历
          */
-        public void postOrder(){
+        public void postOrder() {
             if (this.left != null) {
                 // 向左递归
                 this.left.postOrder();
@@ -165,6 +264,7 @@ public class BinaryTreeDemo {
 
         /**
          * 前序遍历查找
+         *
          * @param no
          * @return
          */
@@ -194,6 +294,7 @@ public class BinaryTreeDemo {
 
         /**
          * 中序遍历查找
+         *
          * @param no
          * @return
          */
@@ -207,7 +308,7 @@ public class BinaryTreeDemo {
             if (result != null) {
                 return result;
             }
-            System.out.println("---------------");
+            // System.out.println("---------------");
             //比较当前节点是否是目标值
             if (this.no == no) {
                 return this;
@@ -240,11 +341,77 @@ public class BinaryTreeDemo {
             if (result != null) {
                 return result;
             }
-            System.out.println("---------------");
+            // System.out.println("---------------");
             if (this.no == no) {
                 return this;
             }
             return null;
+        }
+
+        /**
+         * 删除节点
+         *
+         * @param no
+         */
+        public void delete(int no) {
+            //查找当前节点的左子节点
+            if (this.left != null && this.left.no == no) {
+                //找到把当前节点的左子节点置空
+                this.left = null;
+                return;
+            }
+            //查到当前节点的右子节点
+            if (this.right != null && this.right.no == no) {
+                //找到并把当前节点的右子节点置空
+                this.right = null;
+                return;
+            }
+            //当前节点的左右节点都没找到则递归查找左子树
+            if (this.left != null) {
+                this.left.delete(no);
+            }
+            //左子树没有找到则递归查找右子树
+            if (this.right != null) {
+                this.right.delete(no);
+            }
+        }
+
+        public void deleteInAction(int no) {
+            if (this.left != null && this.left.no == no) {
+                //当前节点的左节点找到
+                //当前节点的左节点为空并且右节点不为空
+                if (this.left.left == null && this.left.right != null) {
+                    //把当前节点的右子节点替代当前节点
+                    this.left = this.left.right;
+                } else {
+                    //当左右节点都存在
+                    if (this.left.left != null && this.left.right != null) {
+                        this.left.left.right = this.left.right;
+                    }
+                    this.left = this.left.left;
+                }
+            }
+            if (this.right != null && this.right.no == no) {
+                //当前节点的右节点找到
+                //当前节点的左节点为空并且右节点不为空
+                if (this.right.left == null && this.right.right != null) {
+                    this.right = this.right.right;
+                } else {
+                    //当左右节点都存在
+                    if (this.right.left != null && this.right.right != null) {
+                        this.right.left.right = this.right.right;
+                    }
+                    this.right = this.right.left;
+                }
+            }
+            //当前节点的左右节点都没找到，递归查找左子树
+            if (this.left != null) {
+                this.left.delete(no);
+            }
+            //当前节点的左子树没有找到，递归查找右子树
+            if (this.right != null) {
+                this.right.delete(no);
+            }
         }
     }
 }

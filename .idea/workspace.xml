@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e85dfbcc-2985-4530-b9ec-76bf858cc391" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/hash/table/HashTableDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/search/FibonacciSearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/search/InsertValueSearch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/tree/BinaryTreeDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/tree/ArrayBinaryTreeDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/tree/HeapSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/tree/ThreadedBinaryTreeDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/tree/BinaryTreeDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/tree/BinaryTreeDemo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,13 +96,13 @@
       <recent name="com.sen.data.structure" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BinaryTreeDemo">
-    <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.search.BinarySearch" />
+  <component name="RunManager" selected="Application.HeapSort">
+    <configuration name="ArrayBinaryTreeDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.tree.ArrayBinaryTreeDemo" />
       <module name="thorough-algorithms" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sen.data.structure.search.*" />
+          <option name="PATTERN" value="com.sen.data.structure.tree.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -122,19 +123,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FibonacciSearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.search.FibonacciSearch" />
-      <module name="thorough-algorithms" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.sen.data.structure.search.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="HashTableDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.hash.table.HashTableDemo" />
       <module name="thorough-algorithms" />
@@ -148,12 +136,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InsertValueSearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.search.InsertValueSearch" />
+    <configuration name="HeapSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.tree.HeapSort" />
       <module name="thorough-algorithms" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sen.data.structure.search.*" />
+          <option name="PATTERN" value="com.sen.data.structure.tree.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThreadedBinaryTreeDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.tree.ThreadedBinaryTreeDemo" />
+      <module name="thorough-algorithms" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sen.data.structure.tree.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -163,11 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.HeapSort" />
+        <item itemvalue="Application.ThreadedBinaryTreeDemo" />
+        <item itemvalue="Application.ArrayBinaryTreeDemo" />
         <item itemvalue="Application.BinaryTreeDemo" />
         <item itemvalue="Application.HashTableDemo" />
-        <item itemvalue="Application.FibonacciSearch" />
-        <item itemvalue="Application.InsertValueSearch" />
-        <item itemvalue="Application.BinarySearch" />
       </list>
     </recent_temporary>
   </component>
@@ -199,7 +200,8 @@
       <workItem from="1578895690132" duration="21230000" />
       <workItem from="1578983546511" duration="10718000" />
       <workItem from="1578998508820" duration="16866000" />
-      <workItem from="1579074652096" duration="18473000" />
+      <workItem from="1579074652096" duration="18573000" />
+      <workItem from="1579154733931" duration="26020000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1578682389772</created>
@@ -243,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579027946031</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="tree">
+      <created>1579114573942</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1579114573942</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,21 +279,26 @@
     <MESSAGE value="Stack" />
     <MESSAGE value="sort" />
     <MESSAGE value="Search Algorithms" />
-    <option name="LAST_COMMIT_MESSAGE" value="Search Algorithms" />
+    <MESSAGE value="tree" />
+    <option name="LAST_COMMIT_MESSAGE" value="tree" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1579107574985">
+    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1579168576794">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1579107574985" />
+    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1579168576794" />
     <state x="389" y="91" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1578681942789">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="389" y="91" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1536.824@0.0.1536.824" timestamp="1578681942789" />
-    <state x="372" y="3" key="CommitChangelistDialog2" timestamp="1579027945078">
+    <state x="140" y="118" key="#xdebugger.evaluate" timestamp="1579177650961">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="372" y="3" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1579027945078" />
+    <state x="140" y="118" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1579177650961" />
+    <state x="372" y="3" key="CommitChangelistDialog2" timestamp="1579114572930">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="372" y="3" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1579114572930" />
     <state width="485" height="466" key="DebuggerActiveHint" timestamp="1578818122161">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -293,38 +307,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1578988890758" />
-    <state width="723" height="280" key="GridCell.Tab.0.bottom" timestamp="1579114422307">
+    <state width="1493" height="231" key="GridCell.Tab.0.bottom" timestamp="1579196131305">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="723" height="280" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579114422307" />
-    <state width="723" height="280" key="GridCell.Tab.0.center" timestamp="1579114422307">
+    <state width="1493" height="231" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579196131305" />
+    <state width="1493" height="231" key="GridCell.Tab.0.center" timestamp="1579196131305">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="723" height="280" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1579114422307" />
-    <state width="723" height="280" key="GridCell.Tab.0.left" timestamp="1579114422307">
+    <state width="1493" height="231" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1579196131305" />
+    <state width="1493" height="231" key="GridCell.Tab.0.left" timestamp="1579196131304">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="723" height="280" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1579114422307" />
-    <state width="723" height="280" key="GridCell.Tab.0.right" timestamp="1579114422307">
+    <state width="1493" height="231" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1579196131304" />
+    <state width="1493" height="231" key="GridCell.Tab.0.right" timestamp="1579196131305">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="723" height="280" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1579114422307" />
-    <state width="723" height="280" key="GridCell.Tab.1.bottom" timestamp="1579114422307">
+    <state width="1493" height="231" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1579196131305" />
+    <state width="1493" height="276" key="GridCell.Tab.1.bottom" timestamp="1579195728802">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="723" height="280" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579114422307" />
-    <state width="723" height="280" key="GridCell.Tab.1.center" timestamp="1579114422307">
+    <state width="1493" height="276" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579195728802" />
+    <state width="1493" height="276" key="GridCell.Tab.1.center" timestamp="1579195728802">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="723" height="280" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1579114422307" />
-    <state width="723" height="280" key="GridCell.Tab.1.left" timestamp="1579114422307">
+    <state width="1493" height="276" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1579195728802" />
+    <state width="1493" height="276" key="GridCell.Tab.1.left" timestamp="1579195728802">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="723" height="280" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1579114422307" />
-    <state width="723" height="280" key="GridCell.Tab.1.right" timestamp="1579114422307">
+    <state width="1493" height="276" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1579195728802" />
+    <state width="1493" height="276" key="GridCell.Tab.1.right" timestamp="1579195728802">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="723" height="280" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1579114422307" />
+    <state width="1493" height="276" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1579195728802" />
     <state x="270" y="38" width="1038" height="786" key="SettingsEditor" timestamp="1578929449024">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -333,10 +347,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1579100009552" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1579027950171">
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1579114575468">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1579027950171" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1579114575468" />
+    <state x="321" y="149" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1579157895000">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="321" y="149" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1579157895000" />
     <state x="499" y="166" key="extract.method.dialog" timestamp="1578932815177">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -345,9 +363,20 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="178" y="23" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1578681927268" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1579113541616">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1579158247729">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1579113541616" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1579158247729" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1579157411356">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1579157411356" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="node.left" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
