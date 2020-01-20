@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e85dfbcc-2985-4530-b9ec-76bf858cc391" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/huffman/tree/HuffmanCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/huffman/tree/HuffmanTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/BinaryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/thorough-algorithms.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/thorough-algorithms.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/binary/sort/tree/BinarySortTreeDemo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/huffman/tree/HuffmanCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/huffman/tree/HuffmanCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BinaryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BinaryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,13 +94,13 @@
       <recent name="com.sen.data.structure" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HuffmanCode">
-    <configuration name="HeapSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.tree.HeapSort" />
+  <component name="RunManager" selected="Application.BinarySortTreeDemo">
+    <configuration name="BinarySortTreeDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.binary.sort.tree.BinarySortTreeDemo" />
       <module name="thorough-algorithms" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sen.data.structure.tree.*" />
+          <option name="PATTERN" value="com.sen.data.structure.binary.sort.tree.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,28 +121,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HuffmanTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.huffman.tree.HuffmanTree" />
+    <configuration name="BinaryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="thorough-algorithms" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.sen.data.structure.huffman.tree.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ThreadedBinaryTreeDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.tree.ThreadedBinaryTreeDemo" />
-      <module name="thorough-algorithms" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.sen.data.structure.tree.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BinaryTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,13 +140,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BinaryTest.testStringBuilder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="thorough-algorithms" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BinaryTest" />
+      <option name="METHOD_NAME" value="testStringBuilder" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HuffmanCode" />
+        <item itemvalue="Application.BinarySortTreeDemo" />
         <item itemvalue="JUnit.BinaryTest.testBinary" />
-        <item itemvalue="Application.HuffmanTree" />
-        <item itemvalue="Application.HeapSort" />
-        <item itemvalue="Application.ThreadedBinaryTreeDemo" />
+        <item itemvalue="Application.HuffmanCode" />
+        <item itemvalue="JUnit.BinaryTest.testStringBuilder" />
+        <item itemvalue="JUnit.BinaryTest" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +191,11 @@
       <workItem from="1579074652096" duration="18573000" />
       <workItem from="1579154733931" duration="26078000" />
       <workItem from="1579268294766" duration="605000" />
-      <workItem from="1579328946989" duration="17066000" />
+      <workItem from="1579328946989" duration="17214000" />
+      <workItem from="1579414484866" duration="7510000" />
+      <workItem from="1579482968237" duration="4996000" />
+      <workItem from="1579526968086" duration="602000" />
+      <workItem from="1579530089448" duration="4802000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1578682389772</created>
@@ -259,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579196161289</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Huffman">
+      <created>1579370435457</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1579370435457</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,13 +289,14 @@
     <MESSAGE value="Search Algorithms" />
     <MESSAGE value="tree" />
     <MESSAGE value="HeapSort" />
-    <option name="LAST_COMMIT_MESSAGE" value="HeapSort" />
+    <MESSAGE value="Huffman" />
+    <option name="LAST_COMMIT_MESSAGE" value="Huffman" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1579355230346">
+    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1579487260136">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1579355230346" />
+    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1579487260136" />
     <state x="389" y="91" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1578681942789">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -303,10 +305,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="140" y="118" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1579177650961" />
-    <state x="372" y="3" key="CommitChangelistDialog2" timestamp="1579196160443">
+    <state x="372" y="3" key="CommitChangelistDialog2" timestamp="1579370434411">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="372" y="3" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1579196160443" />
+    <state x="372" y="3" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1579370434411" />
     <state width="485" height="466" key="DebuggerActiveHint" timestamp="1578818122161">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -315,50 +317,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1578988890758" />
-    <state width="1493" height="230" key="GridCell.Tab.0.bottom" timestamp="1579369542938">
+    <state width="1493" height="230" key="GridCell.Tab.0.bottom" timestamp="1579535148784">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579369542938" />
-    <state width="1493" height="230" key="GridCell.Tab.0.center" timestamp="1579369542938">
+    <state width="1493" height="230" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579535148784" />
+    <state width="1493" height="230" key="GridCell.Tab.0.center" timestamp="1579535148784">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1579369542938" />
-    <state width="1493" height="230" key="GridCell.Tab.0.left" timestamp="1579369542938">
+    <state width="1493" height="230" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1579535148784" />
+    <state width="1493" height="230" key="GridCell.Tab.0.left" timestamp="1579535148784">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1579369542938" />
-    <state width="1493" height="230" key="GridCell.Tab.0.right" timestamp="1579369542938">
+    <state width="1493" height="230" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1579535148784" />
+    <state width="1493" height="230" key="GridCell.Tab.0.right" timestamp="1579535148784">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="230" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1579369542938" />
-    <state width="1493" height="276" key="GridCell.Tab.1.bottom" timestamp="1579364145137">
+    <state width="1493" height="230" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1579535148784" />
+    <state width="1493" height="276" key="GridCell.Tab.1.bottom" timestamp="1579534268181">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579364145137" />
-    <state width="1493" height="276" key="GridCell.Tab.1.center" timestamp="1579364145137">
+    <state width="1493" height="276" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1579534268181" />
+    <state width="1493" height="276" key="GridCell.Tab.1.center" timestamp="1579534268181">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1579364145137" />
-    <state width="1493" height="276" key="GridCell.Tab.1.left" timestamp="1579364145137">
+    <state width="1493" height="276" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1579534268181" />
+    <state width="1493" height="276" key="GridCell.Tab.1.left" timestamp="1579534268181">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1579364145137" />
-    <state width="1493" height="276" key="GridCell.Tab.1.right" timestamp="1579364145137">
+    <state width="1493" height="276" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1579534268181" />
+    <state width="1493" height="276" key="GridCell.Tab.1.right" timestamp="1579534268181">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="276" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1579364145137" />
+    <state width="1493" height="276" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1579534268181" />
     <state x="270" y="38" width="1038" height="786" key="SettingsEditor" timestamp="1578929449024">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="38" width="1038" height="786" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1578929449024" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1579364883916">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1579484601312">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1579364883916" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1579196162797">
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1579484601312" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1579370437159">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1579196162797" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1579370437159" />
+    <state x="489" y="73" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1579416274594">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="489" y="73" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1579416274594" />
     <state x="321" y="149" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1579157895000">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -381,6 +387,15 @@
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1579366738321" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/sen/data/structure/binary/sort/tree/BinarySortTreeDemo.java</url>
+          <line>154</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="node.left" language="JAVA" />

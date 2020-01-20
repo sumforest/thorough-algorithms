@@ -1,5 +1,11 @@
 package com.sen.data.structure.huffman.tree;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -15,12 +21,25 @@ import java.util.Map;
 public class HuffmanCode {
 
     public static void main(String[] args) {
+        // zipFile("f:/03.mp3", "f:/03.zip");
+        // System.out.println("使用赫夫曼编码压缩文件完成");
+        unZipFile("f:/03.zip", "f:/04.mp3");
+        System.out.println("解压文件完毕");
+
+        // unZipFile("f:/dst.zip", "f:/src2.bmp");
+        // System.out.println("解压文件完毕");
+        // zipFile("f:/src.bmp", "f:/dst.zip");
+        // System.out.println("使用赫夫曼编码压缩文件完成");
+        /*
         String message = "i like like like java do you like a java";
         byte[] messageBytes = message.getBytes();
 
         byte[] bytes = zipByHuffmanCode(messageBytes);
-        System.out.println("压缩后的字节数组：" + Arrays.toString(bytes));
-        System.out.println("压缩后的字节数组长度：" + bytes.length);
+        byte[] decode = decode(huffmanCodes, bytes);
+        System.out.println(new String(decode).length());
+         */
+        // System.out.println("压缩后的字节数组：" + Arrays.toString(bytes));
+        // System.out.println("压缩后的字节数组长度：" + bytes.length);
 
         /*//将原数据字节数组转换成对应的节点
         List<Node> nodes = toNodeList(messageBytes);
@@ -33,6 +52,114 @@ public class HuffmanCode {
         //根据赫夫曼编码表压缩原数据字节数组
         byte[] bytesByHuffmanCode = zip(messageBytes, huffmanCodes);
         System.out.println(bytesByHuffmanCode.length);*/
+    }
+
+    /**
+     * 解压文件
+     *
+     * @param unZipFile 需要解压的文件路径
+     * @param dstFile   解压后的文件路径
+     */
+    private static void unZipFile(String unZipFile, String dstFile) {
+        try (
+                FileInputStream fis = new FileInputStream(unZipFile);
+                ObjectInputStream ois = new ObjectInputStream(fis);
+                FileOutputStream fos = new FileOutputStream(dstFile)
+        ) {
+            //读取压缩后的字节数组
+            byte[] bytes = (byte[]) ois.readObject();
+            //读取压缩文件中的赫夫曼编码表
+            Map<Byte, String> huffmanCodes = (Map<Byte, String>) ois.readObject();
+            //解压问及那
+            byte[] decode = decode(huffmanCodes, bytes);
+            //写入文件到问及那
+            fos.write(decode);
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 使用赫夫曼编码表压缩文件
+     *
+     * @param srcFile 源文件地址
+     * @param dstFile 输出文件地址
+     */
+    private static void zipFile(String srcFile, String dstFile) {
+        try (
+                //创建文件输入流
+                FileInputStream fis = new FileInputStream(srcFile);
+                //创建文件输出流
+                FileOutputStream fos = new FileOutputStream(dstFile);
+                //创建对象输出流
+                ObjectOutputStream oos = new ObjectOutputStream(fos)
+        ) {
+            byte[] bytes = new byte[fis.available()];
+            //把输入流写入到byte数组
+            fis.read(bytes);
+            //使用赫夫曼编码压缩源文件字节数组
+            byte[] zipBytes = zipByHuffmanCode(bytes);
+            //使用对象输出流把压缩后的字节数组写入目标文件
+            oos.writeObject(zipBytes);
+            //把赫夫曼编码表写入目标文件
+            oos.writeObject(huffmanCodes);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 根据赫夫曼编码表解压压缩内容
+     *
+     * @param huffmanCodes 赫夫曼编码表
+     * @param encodeBytes  压缩后的字节数组
+     * @return 解压后的字节数组
+     */
+    private static byte[] decode(Map<Byte, String> huffmanCodes, byte[] encodeBytes) {
+        StringBuilder builder = new StringBuilder();
+        //获取压缩后的字节数组对应的二进制字符串
+        for (int i = 0; i < encodeBytes.length; i++) {
+            byte encode = encodeBytes[i];
+            String code;
+            if (i == encodeBytes.length - 1) {
+                code = byteToBinaryString(false, encode);
+            } else {
+                //获取每个元素对应的二进制字符串
+                code = byteToBinaryString(true, encode);
+            }
+            //拼接字符串
+            builder.append(code);
+        }
+        //将赫夫曼编码表反转，由key->ASCII value->路径 反转成key->路径 value->ASCII
+        HashMap<String, Byte> reverse = new HashMap<>();
+        huffmanCodes.forEach((k, v) -> reverse.put(v, k));
+        ArrayList<Byte> bytes = new ArrayList<>();
+        //遍历压缩后的二进制字符串
+        for (int i = 0; i < builder.length(); ) {
+            //计数器
+            int count = 0;
+            boolean flag = true;
+            //从i开始匹配
+            while (flag && i+count < builder.length()) {
+                String code = builder.substring(i, i + count);//92153210
+                Byte data = reverse.get(code);
+                if (data == null) {
+                    //没有匹配到，移动count
+                    count++;
+                } else {
+                    //匹配到对应编码
+                    bytes.add(data);
+                    flag = false;
+                }
+            }
+            //更新i
+            i += count;
+        }
+        byte[] target = new byte[bytes.size()];
+        for (int i = 0; i < target.length; i++) {
+            target[i] = bytes.get(i);
+        }
+        return target;
     }
 
     /**
@@ -59,6 +186,7 @@ public class HuffmanCode {
 
     /**
      * 利用赫夫曼编码压缩
+     *
      * @param bytes 原数据的字节数组
      * @return 压缩后的字节数组
      */
@@ -98,7 +226,7 @@ public class HuffmanCode {
         }
         byte[] bytesByHuffmanCode = new byte[len];
         //记录byte数组的指针
-        int index= 0;
+        int index = 0;
         //把builder的内容切割成每8个字符一个byte-->8 Bit = 1 byte
         for (int i = 0; i < builder.length(); i += 8) {
             //当最后的builder不是8的整数倍的时候只取其实际长度，防止越界
