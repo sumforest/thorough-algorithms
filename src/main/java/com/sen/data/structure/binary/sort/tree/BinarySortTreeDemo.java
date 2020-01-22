@@ -13,19 +13,22 @@ public class BinarySortTreeDemo {
         for (int i : arr) {
             binarySortTree.add(new Node(i));
         }
-        // binarySortTree.preOrderPrint();
+        // binarySortTree.infixOrderPrint();
 
         //删除根节点
         // binarySortTree.deleteNode(7);
-        // binarySortTree.preOrderPrint();
+        // binarySortTree.infixOrderPrint();
 
         //删除叶子节点
-        binarySortTree.deleteNode(2);
-        binarySortTree.deleteNode(5);
-        binarySortTree.deleteNode(9);
-        binarySortTree.deleteNode(12);
-        binarySortTree.deleteNode(1);
-        binarySortTree.preOrderPrint();
+        // binarySortTree.deleteNode(2);
+        // binarySortTree.deleteNode(5);
+        // binarySortTree.deleteNode(9);
+        // binarySortTree.deleteNode(12);
+        // binarySortTree.deleteNode(1);
+
+        binarySortTree.deleteNode(3);
+        binarySortTree.deleteNode(10);
+        binarySortTree.infixOrderPrint();
     }
 
     private static class BinarySortTree {
@@ -69,12 +72,12 @@ public class BinarySortTreeDemo {
                 return;
             }
             Node parentNode = findParentNode(value);
-            //删除的节点是叶子节点
             if (parentNode == null) {
                 //要删除的节点是该BST的根节点
                 root = null;
                 return;
             }
+            //删除的节点是叶子节点
             if (targetNode.left == null && targetNode.right == null) {
                 //要删除的节点是parent的左子节点
                 if (parentNode.left != null && parentNode.left.value == value) {
@@ -84,12 +87,62 @@ public class BinarySortTreeDemo {
                 //要删除的点点是parent的右子节点
                 if (parentNode.right != null && parentNode.right.value == value) {
                     parentNode.right = null;
-                    return;
+                }
+            }
+            //删除的节点是有两个子树
+            else if (targetNode.left != null && targetNode.right != null) {
+                //查找当前节点子树的最小值
+                int min = findMinValue(targetNode.right);
+                //把当前得点的父节点的值用最小值替换
+                targetNode.value = min;
+            }
+            //删除的节点有一个子树
+            else {
+                //要删除的节点有左子树
+                if (targetNode.left != null) {
+                    //要删除的节点是parent的左子树
+                    if (parentNode.left.value == value) {
+                        parentNode.left = targetNode.left;
+                        return;
+                    }
+                    //要删除的的节点是parent的右子树
+                    if (parentNode.right.value == value) {
+                        parentNode.right = targetNode.left;
+                        return;
+                    }
+                }
+                //要删除的节点有右子树
+                if (targetNode.right != null) {
+                    //要删除的节点是parent的左子树
+                    if (parentNode.left.value == value) {
+                        parentNode.left = targetNode.right;
+                        return;
+                    }
+                    //要删除的节点是parent的右子节点
+                    if (parentNode.right.value == value) {
+                        parentNode.right = targetNode.right;
+                    }
                 }
             }
         }
 
-        public void preOrderPrint() {
+        /**
+         * 查找要删除节点的右子树的最小值，并删除最小节点
+         *
+         * @param node 要查找子树的根节点
+         * @return 要删除子树的最小值
+         */
+        private int findMinValue(Node node) {
+            //向左寻找最小节点的值
+            while (node.left != null) {
+                node = node.left;
+            }
+            int temp = node.value;
+            deleteNode(temp);
+            return temp;
+        }
+
+        public void infixOrderPrint() {
             if (root == null) {
                 System.err.println("Current Tree is Empty");
             } else {
