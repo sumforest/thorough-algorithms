@@ -3,7 +3,7 @@ package com.sen.data.structure.binary.sort.tree;
 /**
  * @Auther: Sen
  * @Date: 2020/1/20 10:16
- * @Description: 二叉排序树
+ * @Description: 二叉排序树（二叉搜索树）
  */
 public class BinarySortTreeDemo {
 
