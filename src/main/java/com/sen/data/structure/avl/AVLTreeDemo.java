@@ -8,17 +8,24 @@ package com.sen.data.structure.avl;
 public class AVLTreeDemo {
     public static void main(String[] args) {
         // int[] arr = {4, 3, 6, 5, 7, 8};
-        int[] arr = {10, 12, 8, 9, 7, 6};
+        // int[] arr = {10, 12, 8, 9, 7, 6};
+        int[] arr = {10, 11, 7, 6, 8, 9};
         AVLTree avlTree = new AVLTree();
         for (int value : arr) {
             avlTree.add(new Node(value));
         }
         System.out.println("创建的二叉排序树");
         avlTree.print();
-        System.out.println("左旋转调整后树的高度：" + avlTree.height());
-        System.out.println("旋转前的左子树的高度：" + avlTree.leftHeight());
+        // System.out.println("左旋转调整后树的高度：" + avlTree.height());
+        // System.out.println("旋转前的左子树的高度：" + avlTree.leftHeight());
+        // System.out.println("旋转后的右子树的高度：" + avlTree.rightHeight());
+        // System.out.println("根节点为：" + avlTree.root);
+
+        System.out.println("双旋转调整后树的高度：" + avlTree.height());
+        System.out.println("旋转后的左子树的高度：" + avlTree.leftHeight());
         System.out.println("旋转后的右子树的高度：" + avlTree.rightHeight());
         System.out.println("根节点为：" + avlTree.root);
+        avlTree.print();
     }
 
     private static class AVLTree {
@@ -206,13 +213,29 @@ public class AVLTreeDemo {
             }
             //每添加一个节点检查是否需要进行旋转
             if (rightHeight() - leftHeight() > 1) {
-                //当前节点的右子树高度-当前节点的左子树高度大于1
-                leftRotate();
+                if (this.right.leftHeight() > this.right.rightHeight()) {
+                    //满足左旋转条件时判断当前节点的右子节点的左子树高度是否大于右子树高度
+                    //满足对当前节点的右子树进行右旋转
+                    this.right.rightRotate();
+                    //在对当前节点左旋转
+                    leftRotate();
+                }else{
+                    //当前节点的右子树高度-当前节点的左子树高度大于1
+                    leftRotate();
+                }
+                return;
             }
             if (leftHeight() - rightHeight() > 1) {
-                //当前节点的左子树-当前节点的右子树高于大于1
-                rightRotate();
-                ;
+                if (this.left.rightHeight() > this.left.leftHeight()) {
+                    //满足右旋转条件时判断左子节点的右子树高度是否大于左子树高度，满足条件对当前节点的左子树进行左旋转
+                    this.left.leftRotate();
+                    //对当前节点进行右旋转
+                    rightRotate();
+                }
+                else {
+                    //当前节点的左子树-当前节点的右子树高于大于1
+                    rightRotate();
+                }
             }
         }
     }
