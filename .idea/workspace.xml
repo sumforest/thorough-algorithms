@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e85dfbcc-2985-4530-b9ec-76bf858cc391" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/algorithm/binary/search/norecursive/BinarySearchNoRecursive.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/algorithm/divide/and/conquer/DivideAndConquer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/algorithm/dynamic/KnapsackProblem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/graph/Graph.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/algorithm/dynamic/KMPAlgorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/algorithm/greedy/GreedyAlgorithm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sen/algorithm/kmp/Violence.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/avl/AVLTreeDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sen/data/structure/avl/AVLTreeDemo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,33 +94,7 @@
       <recent name="com.sen.data.structure" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.KnapsackProblem">
-    <configuration name="AVLTreeDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.avl.AVLTreeDemo" />
-      <module name="thorough-algorithms" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.sen.data.structure.avl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BinarySearchNoRecursive" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sen.algorithm.binary.search.norecursive.BinarySearchNoRecursive" />
-      <module name="thorough-algorithms" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.sen.algorithm.binary.search.norecursive.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.GreedyAlgorithm">
     <configuration name="DivideAndConquer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.sen.algorithm.divide.and.conquer.DivideAndConquer" />
       <module name="thorough-algorithms" />
@@ -136,12 +108,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Graph" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.sen.data.structure.graph.Graph" />
+    <configuration name="GreedyAlgorithm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sen.algorithm.greedy.GreedyAlgorithm" />
       <module name="thorough-algorithms" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.sen.data.structure.graph.*" />
+          <option name="PATTERN" value="com.sen.algorithm.greedy.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KMPAlgorithm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sen.algorithm.dynamic.KMPAlgorithm" />
+      <module name="thorough-algorithms" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sen.algorithm.dynamic.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -162,13 +147,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Violence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sen.algorithm.kmp.Violence" />
+      <module name="thorough-algorithms" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sen.algorithm.kmp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GreedyAlgorithm" />
+        <item itemvalue="Application.KMPAlgorithm" />
+        <item itemvalue="Application.Violence" />
         <item itemvalue="Application.KnapsackProblem" />
         <item itemvalue="Application.DivideAndConquer" />
-        <item itemvalue="Application.BinarySearchNoRecursive" />
-        <item itemvalue="Application.Graph" />
-        <item itemvalue="Application.AVLTreeDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -215,7 +213,9 @@
       <workItem from="1579834324045" duration="2688000" />
       <workItem from="1579924730854" duration="13461000" />
       <workItem from="1580046045497" duration="3352000" />
-      <workItem from="1580099687238" duration="4360000" />
+      <workItem from="1580099687238" duration="4521000" />
+      <workItem from="1580180983513" duration="5174000" />
+      <workItem from="1580223301466" duration="5108000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1578682389772</created>
@@ -301,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579799460043</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="AVL">
+      <created>1580140852887</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1580140852887</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,14 +351,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="389" y="91" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1536.824@0.0.1536.824" timestamp="1578681942789" />
-    <state x="140" y="118" key="#xdebugger.evaluate" timestamp="1579961633089">
+    <state x="140" y="118" key="#xdebugger.evaluate" timestamp="1580228238733">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="140" y="118" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1579961633089" />
-    <state x="372" y="3" key="CommitChangelistDialog2" timestamp="1579799459053">
+    <state x="140" y="118" key="#xdebugger.evaluate/0.0.1536.824@0.0.1536.824" timestamp="1580228238733" />
+    <state x="372" y="3" key="CommitChangelistDialog2" timestamp="1580140851889">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="372" y="3" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1579799459053" />
+    <state x="372" y="3" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1580140851889" />
     <state width="485" height="466" key="DebuggerActiveHint" timestamp="1578818122161">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -376,50 +383,50 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="276" key="GridCell.Tab.-1.right/0.0.1536.824@0.0.1536.824" timestamp="1579961240203" />
-    <state width="1493" height="323" key="GridCell.Tab.0.bottom" timestamp="1580140837842">
+    <state width="1493" height="231" key="GridCell.Tab.0.bottom" timestamp="1580229606770">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="323" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580140837842" />
-    <state width="1493" height="323" key="GridCell.Tab.0.center" timestamp="1580140837842">
+    <state width="1493" height="231" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580229606770" />
+    <state width="1493" height="231" key="GridCell.Tab.0.center" timestamp="1580229606770">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="323" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580140837842" />
-    <state width="1493" height="323" key="GridCell.Tab.0.left" timestamp="1580140837842">
+    <state width="1493" height="231" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1580229606770" />
+    <state width="1493" height="231" key="GridCell.Tab.0.left" timestamp="1580229606770">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="323" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580140837842" />
-    <state width="1493" height="323" key="GridCell.Tab.0.right" timestamp="1580140837842">
+    <state width="1493" height="231" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1580229606770" />
+    <state width="1493" height="231" key="GridCell.Tab.0.right" timestamp="1580229606770">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="323" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580140837842" />
-    <state width="1493" height="323" key="GridCell.Tab.1.bottom" timestamp="1580140837842">
+    <state width="1493" height="231" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1580229606770" />
+    <state width="1493" height="323" key="GridCell.Tab.1.bottom" timestamp="1580229515834">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="323" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580140837842" />
-    <state width="1493" height="323" key="GridCell.Tab.1.center" timestamp="1580140837842">
+    <state width="1493" height="323" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1580229515834" />
+    <state width="1493" height="323" key="GridCell.Tab.1.center" timestamp="1580229515834">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="323" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1580140837842" />
-    <state width="1493" height="323" key="GridCell.Tab.1.left" timestamp="1580140837842">
+    <state width="1493" height="323" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1580229515834" />
+    <state width="1493" height="323" key="GridCell.Tab.1.left" timestamp="1580229515834">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="323" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1580140837842" />
-    <state width="1493" height="323" key="GridCell.Tab.1.right" timestamp="1580140837842">
+    <state width="1493" height="323" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1580229515834" />
+    <state width="1493" height="323" key="GridCell.Tab.1.right" timestamp="1580229515834">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="323" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1580140837842" />
+    <state width="1493" height="323" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1580229515834" />
     <state x="270" y="38" width="1038" height="786" key="SettingsEditor" timestamp="1578929449024">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="38" width="1038" height="786" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1578929449024" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1579942506170">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1580228607917">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1579942506170" />
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1579799461823">
+    <state width="498" height="446" key="SwitcherDM/0.0.1536.824@0.0.1536.824" timestamp="1580228607917" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2" timestamp="1580140854358">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1579799461823" />
+    <state x="361" y="146" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1580140854358" />
     <state x="489" y="73" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1579416274594">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
