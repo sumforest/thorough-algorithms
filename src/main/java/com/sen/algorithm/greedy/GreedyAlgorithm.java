@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Map;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/28 23:37
  * @Description: 贪心算法
  */

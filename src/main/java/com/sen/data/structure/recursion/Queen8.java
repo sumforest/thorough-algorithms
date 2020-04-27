@@ -1,7 +1,7 @@
 package com.sen.data.structure.recursion;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/13 18:20
  * @Description: 递归回溯解决8皇后问题
  */
@@ -15,7 +15,7 @@ public class Queen8 {
      * 用于记录棋盘和皇后位置的数组，理论上应该创建二维数据表示，这里用一维数组解决
      * 一维数组的含义：
      * 1.数组的下标index表示第index+1个皇后
-     * 2.数组下标表述当前第index+1个皇后摆放在第index+1行
+     * 2.数组下标表示当前第index+1个皇后摆放在第index+1行
      * 3.对应下标index的值value表示第index+1个皇后摆放再index+1行value+1列
      */
     private int[] array = new int[max];
@@ -47,13 +47,13 @@ public class Queen8 {
      */
     private boolean judge(int n) {
         for (int i = 0; i < n; i++) {
-            //array[i] == array[n]表示两个皇后再同一列位置上
-            //Math.abs(n - i) == Math.abs(array[n] - array[i])数学上的意义为：相当于y=x
-            // 表示连个皇后再同一斜线上
+            // array[i] == array[n]表示两个皇后再同一列位置上
+            // Math.abs(n - i) == Math.abs(array[n] - array[i])数学上的意义为：相当于y=x
+            // 表示两个皇后在同一斜线上
             if (array[i] == array[n] || Math.abs(n - i) == Math.abs(array[n] - array[i])) {
                 return false;
             }
-            //无需判断行，因为摆放棋子时代表行的n会递增
+            // 无需判断行，因为摆放棋子时代表行的n会递增
         }
         return true;
     }
@@ -67,7 +67,6 @@ public class Queen8 {
         //n为8时表示前面的8个棋子已经摆好
         if (n == max) {
             print();
-            return;
         } else {
             for (int i = 0; i < max; i++) {
                 array[n] = i;

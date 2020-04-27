@@ -1,7 +1,7 @@
 package com.sen.algorithm.binary.search.norecursive;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/26 21:53
  * @Description: 二分查找算法非递归实现,前提：数组有序
  */

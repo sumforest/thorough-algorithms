@@ -3,7 +3,7 @@ package com.sen.algorithm.dijkstra;
 import java.util.Arrays;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/31 18:09
  * @Description: 迪杰斯特拉算法：解决最短路径问题
  */

@@ -1,7 +1,7 @@
 package com.sen.data.structure.recursion;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/13 16:28
  * @Description: 利用递归回溯解决迷宫找路问题
  */

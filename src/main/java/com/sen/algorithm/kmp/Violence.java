@@ -1,7 +1,7 @@
 package com.sen.algorithm.kmp;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/28 11:28
  * @Description: 字符串匹配暴力匹配算法
  */

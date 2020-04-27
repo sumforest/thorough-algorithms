@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/25 14:51
  * @Description: 图（邻接矩阵）
  */

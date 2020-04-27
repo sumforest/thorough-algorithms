@@ -1,7 +1,7 @@
 package com.sen.algorithm.divide.and.conquer;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/26 23:03
  * @Description: 分治算法
  */

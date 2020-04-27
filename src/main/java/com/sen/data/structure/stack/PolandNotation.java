@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/13 01:35
  * @Description: 实现逆波兰表达式(后缀表达式)
  */
@@ -17,7 +17,7 @@ public class PolandNotation {
         (3+4)*5-6
         (30+4)*5-6
         4*5-8+60+8/2 -> 逆波兰表达式 4 5 * 8 - 60 + 8 2 / +
-        为了计算计算简便通过
+        为了计算简便通过
         思路:1.将表达式存放在在集合中方便遍历
              2.遍历表达式,并将数字压入栈中
         */
@@ -30,7 +30,7 @@ public class PolandNotation {
        思路:
             1.先把中缀表达式字符串转换成字符串集合方便操作
             2.将1+((2+3)*4)-5中缀表达式转换成后缀表达式1 2 3 + 4 * + 5 -
-            3.把中缀缀表达式List：[1, +, (, (, 2, +, 3, ), *, 4, ), -, 5]
+            3.把中缀表达式List：[1, +, (, (, 2, +, 3, ), *, 4, ), -, 5]
               转换成后缀表达式List:[1,2,3,+,4,*,+,5,-]
        */
         String expression = "1+((2+3)*4)-5";
@@ -54,7 +54,7 @@ public class PolandNotation {
 
     /**
      * 利用逆波兰表达式计算
-     *
+     *  1+((2+3)*4)-5 -> 1,2,3,+,4,*,+,5,-
      * @param stringList 逆波兰表达式
      * @return
      */
@@ -68,7 +68,9 @@ public class PolandNotation {
             }
             //符号位,弹出栈里面的两个数字进行运算后出的数作为减数或者除数
             else {
+                // 栈顶元素作为被减数/被除数
                 int num2 = Integer.parseInt(stack.pop());
+                // 磁钉元素作为减数/除数
                 int num1 = Integer.parseInt(stack.pop());
                 int result;
                 //判断当前遍历到的符号的类型
@@ -102,17 +104,18 @@ public class PolandNotation {
         int point = 0;
         do {
             char ch = infix.charAt(point);
-            //当前字符位非数字时
+            //当前字符为非数字时
             if (ch < 48 || ch > 57) {
                 infixExpressionList.add(String.valueOf(ch));
                 //后移指针
                 point++;
             }
-            //当前字符位数字
+            //当前字符为数字
             else {
                 String str = "";
-                //循环把多个位的数字加拼接到字符串中
+                //循环把多个位的数字拼接到字符串中，比较ASCII码
                 while (point < infix.length() && infix.charAt(point) >= 48 && infix.charAt(point) <= 57) {
+                    // 把ASCII拼接称数字
                     str += String.valueOf(infix.charAt(point));
                     point++;
                 }
@@ -136,10 +139,10 @@ public class PolandNotation {
         List<String> suffix = new ArrayList<>();
         //遍历中缀表达式集合
         for (String expression : expressions) {
-            //如果是操作数直接加入集合
+            //如果是操作数直接加入集合，一个或多个数字正则表达式
             if (expression.matches("\\d+")) {
                 suffix.add(expression);
-                //如果是左括号直接栈
+                //如果是左括号直接入栈
             } else if ("(".equals(expression)) {
                 stack.push(expression);
                 //如果是右括号把栈中的栈顶操作符弹出并加入集合中，直到遇到左括号

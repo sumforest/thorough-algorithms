@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/2/3 18:29
  * @Description: 解决骑士周游问题
  */

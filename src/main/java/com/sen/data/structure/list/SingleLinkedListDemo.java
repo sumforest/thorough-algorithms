@@ -2,7 +2,7 @@ package com.sen.data.structure.list;
 
 import java.util.Stack;
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/11 22:50
  * @Description: 单项链表
  */

@@ -1,7 +1,7 @@
 package com.sen.data.structure.sort;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/13 23:54
  * @Description: 选择排序，时间复杂度O(n^2)
  */

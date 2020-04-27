@@ -1,7 +1,7 @@
 package com.sen.algorithm.dynamic;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/28 13:53
  * @Description: KMP算法
  */

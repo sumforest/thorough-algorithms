@@ -3,7 +3,7 @@ package com.sen.data.structure.huffman.tree;
 import java.util.ArrayList;
 import java.util.Collections;
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/18 15:22
  * @Description: 实现赫夫曼编码
  */

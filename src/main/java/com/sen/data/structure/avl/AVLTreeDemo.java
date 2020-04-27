@@ -1,7 +1,7 @@
 package com.sen.data.structure.avl;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/23 23:21
  * @Description: 平衡二叉树（前提二叉搜索树）
  */

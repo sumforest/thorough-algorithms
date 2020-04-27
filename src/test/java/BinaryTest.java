@@ -1,7 +1,7 @@
 import org.junit.Test;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/19 00:13
  * @Description:
  */

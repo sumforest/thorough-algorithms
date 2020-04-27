@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/14 16:54
  * @Description: 快速排序
  */

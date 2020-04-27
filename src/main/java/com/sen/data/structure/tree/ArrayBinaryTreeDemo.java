@@ -1,7 +1,7 @@
 package com.sen.data.structure.tree;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/16 16:20
  * @Description: 顺序存储二叉树
  */

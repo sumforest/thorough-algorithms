@@ -3,7 +3,7 @@ package com.sen.data.structure.search;
 import jdk.nashorn.internal.ir.IfNode;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/15 01:23
  * @Description: 线性查找
  */

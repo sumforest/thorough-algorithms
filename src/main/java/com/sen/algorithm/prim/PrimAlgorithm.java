@@ -1,7 +1,7 @@
 package com.sen.algorithm.prim;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/29 14:05
  * @Description: 普里姆算法，解决修路最短问题
  */

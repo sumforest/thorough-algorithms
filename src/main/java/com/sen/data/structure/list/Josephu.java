@@ -1,7 +1,7 @@
 package com.sen.data.structure.list;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/12 17:37
  * @Description: 解决约瑟夫/约瑟夫环问题（环形链表）
  */
@@ -21,7 +21,7 @@ public class Josephu {
         Boy first;
 
         /**
-         * 更具参数创建环形链表
+         * 根据参数创建环形链表
          *
          * @param nums 需要创建多少个节点的环形链表
          */

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/15 02:02
  * @Description: 二分查找
  */

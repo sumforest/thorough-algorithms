@@ -3,7 +3,7 @@ package com.sen.algorithm.kruskal;
 import java.util.Arrays;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/29 22:49
  * @Description: 克鲁斯卡尔算法解决公交问题
  */

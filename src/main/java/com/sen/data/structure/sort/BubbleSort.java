@@ -8,7 +8,7 @@ import java.util.Random;
 import java.util.function.Consumer;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/13 22:55
  * @Description: 冒泡排序，时间复杂度n^2
  */

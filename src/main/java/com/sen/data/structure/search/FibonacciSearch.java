@@ -3,7 +3,7 @@ package com.sen.data.structure.search;
 import java.util.Arrays;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/15 18:14
  * @Description: 斐波那契查找算法（黄金分割查找算法），前提：数组有序
  */

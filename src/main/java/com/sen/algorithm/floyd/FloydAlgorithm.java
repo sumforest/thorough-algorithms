@@ -3,7 +3,7 @@ package com.sen.algorithm.floyd;
 import java.util.Arrays;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/2/2 23:45
  * @Description: 弗洛伊德算法：解决最短路径问题（时间复杂度n^3)
  */

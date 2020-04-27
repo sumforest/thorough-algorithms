@@ -1,7 +1,7 @@
 package com.sen.data.structure.sparse.array;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/11 16:57
  * @Description: 稀疏数组
  */

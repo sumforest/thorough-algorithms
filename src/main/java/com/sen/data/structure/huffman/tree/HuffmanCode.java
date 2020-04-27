@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/18 21:25
  * @Description: 赫夫曼编码表
  */

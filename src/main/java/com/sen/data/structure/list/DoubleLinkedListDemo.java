@@ -1,7 +1,7 @@
 package com.sen.data.structure.list;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/12 15:06
  * @Description: 双向链表
  */

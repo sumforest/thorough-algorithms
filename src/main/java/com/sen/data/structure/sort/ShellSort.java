@@ -3,7 +3,7 @@ package com.sen.data.structure.sort;
 import java.util.Arrays;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/14 02:58
  * @Description: 希尔排序
  */

@@ -3,7 +3,7 @@ package com.sen.data.structure.stack;
 import java.util.Scanner;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/12 22:10
  * @Description: 栈(单向链表实现)
  */

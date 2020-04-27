@@ -3,7 +3,7 @@ package com.sen.data.structure.queue;
 import java.util.Scanner;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/11 18:15
  * @Description: 数组模拟队列
  * 缺点：数组的空间无法重复利用

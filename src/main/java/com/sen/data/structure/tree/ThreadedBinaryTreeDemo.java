@@ -3,7 +3,7 @@ package com.sen.data.structure.tree;
 import javax.xml.soap.Node;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/16 17:29
  * @Description: 线索化二叉树
  */

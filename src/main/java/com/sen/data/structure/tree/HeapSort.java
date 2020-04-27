@@ -5,7 +5,7 @@ import com.sen.data.structure.sort.BubbleSort;
 import java.util.Arrays;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/17 00:10
  * @Description: 堆排序
  */

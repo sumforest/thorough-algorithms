@@ -3,7 +3,7 @@ package com.sen.data.structure.queue;
 import java.util.Scanner;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/11 21:48
  * @Description: 环形队列
  */

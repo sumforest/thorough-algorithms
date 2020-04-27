@@ -3,7 +3,7 @@ package com.sen.data.structure.hash.table;
 import java.util.Scanner;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/15 22:01
  * @Description: 实现Hash表
  */

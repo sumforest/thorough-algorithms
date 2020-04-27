@@ -1,7 +1,7 @@
 package com.sen.data.structure.stack;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/12 23:08
  * @Description: 栈实现综合计算器(只支持 + - * /) 中缀表达式
  */
@@ -15,10 +15,11 @@ public class Calculator {
         ArrayStack operatorStack = new ArrayStack(10);
         //记录遍历位置的指针
         int index = 0;
-        int num1 = 0;
-        int num2 = 0;
-        int result = 0;
-        int operator = 0;
+
+        int num1;
+        int num2;
+        int result;
+        int operator;
         String temp = "";
         while (index != expression.length()) {
             char ch = expression.substring(index, index + 1).charAt(0);
@@ -52,11 +53,11 @@ public class Calculator {
             }
             //ch为数字
             else {
-                //更具ASCII码表0的ASCII码为48
+                //根据ASCII码表0的ASCII码为48
                 // numStack.push(ch - 48);
                 // 当前为位是数字时不能直接入栈,还需要往后探一位是否也是数字位,不是数字位时才入栈
                 temp += ch;
-                //如果当前位是位已经是最后以位时直接入栈
+                //如果当前位已经是最后以位时直接入栈
                 if (index == expression.length() - 1) {
                     numStack.push(Integer.parseInt(temp));
                 } else {

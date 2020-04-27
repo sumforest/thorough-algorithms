@@ -1,7 +1,7 @@
 package com.sen.data.structure.search;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/15 17:04
  * @Description: 插值查找(前提数组必须有序)
  */

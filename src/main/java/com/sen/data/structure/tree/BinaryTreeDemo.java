@@ -1,7 +1,7 @@
 package com.sen.data.structure.tree;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/16 00:49
  * @Description: 二叉树
  */

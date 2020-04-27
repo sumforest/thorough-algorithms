@@ -1,7 +1,7 @@
 package com.sen.algorithm.dynamic;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/27 23:19
  * @Description: 动态规划解决背包问题（01背包）
  */

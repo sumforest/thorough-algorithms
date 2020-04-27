@@ -8,7 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/11 16:57
  * @Description: 创建稀疏数组并保存到硬盘，然后再从硬盘中恢复
  */

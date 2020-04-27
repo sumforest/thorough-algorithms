@@ -3,7 +3,7 @@ package com.sen.data.structure.sort;
 import java.util.Arrays;
 
 /**
- * @Auther: Sen
+ * @Author: Sen
  * @Date: 2020/1/14 23:04
  * @Description: 基数排序（桶排序）,典型的一种空间换时间的算法。
  * 特点：
