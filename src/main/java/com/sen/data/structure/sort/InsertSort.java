@@ -19,17 +19,20 @@ public class InsertSort {
     }
 
     private static void inertSort(int[] arr) {
-        //一开始把第一个元素看成是有序的101, 34, 119, 1->34, 101, 119, 1
+        //一开始把第一个元素看成是有序的101, 34, 119, 1 -> 34, 101, 119, 1
         for (int i = 1; i < arr.length; i++) {
+            // 要插入的值
             int insert = arr[i];
+            // 已经有序部分的最后一个元素的下标
             int index = i - 1;
+            // 寻找插入的位置
             while (index >= 0 && insert < arr[index]) {
                 //把index的元素后移
                 arr[index + 1] = arr[index];
                 //把指针前移
                 index--;
             }
-            //要插入的位置不是自身位置是才插入
+            //要插入的位置不是自身位置时才插入
             if (index + 1 != i) {
                 //把index往后移动1到目标位置
                 arr[index+1] = insert;

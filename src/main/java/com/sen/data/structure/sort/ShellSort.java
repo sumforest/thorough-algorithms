@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * @Author: Sen
  * @Date: 2020/1/14 02:58
- * @Description: 希尔排序
+ * @Description: 希尔排序,时间复杂度 O(n^s),1 < s < 2
  */
 public class ShellSort {
 
@@ -43,7 +43,7 @@ public class ShellSort {
             }
         }
         
-/*
+/*                                 |--------------|
         //第一轮分成分成5组,每组两个元素8, 9, 1, 7, 2, 3, 5, 4, 6, 0->3,5,1,6,0,8,9,4,7,2
         for (int i = 5; i < arr.length ; i++) {
             for (int j = i - 5; j >= 0; j -= 5) {
@@ -58,6 +58,7 @@ public class ShellSort {
         System.out.println("第一轮结果"+ Arrays.toString(arr));
 
         //第二轮分成分成2组,每组5个元素3,5,1,6,0,8,9,4,7,2->0,2,1,4,3,5,7,6,9,8
+        // 第一组 3,1,0,9,7
         for (int i = 2; i < arr.length ; i++) {
             //这个循环回会对每组都进行排序
             for (int j = i - 2; j >= 0; j -= 2) {
@@ -99,12 +100,12 @@ public class ShellSort {
             for (int i = gap; i < arr.length; i++) {
                 //目标位置的下标
                 int index = i;
-                //带插入的值
+                //待插入的值
                 int insertValue = arr[i];
                 //同组的前一个元素比后一个元素大时才移动插入
                 if (arr[index] < arr[index - gap]) {
                     //index - gap >= 0 确保下标不越界，并且可以把最小的值移到最前面
-                    //insertValue < arr[i] 因为从小到打排序，所以次条件满足时说明待插入元素还没找到合适的位置
+                    //insertValue < arr[i] 因为从小到大排序，所以次条件满足时说明待插入元素还没找到合适的位置
                     while (index - gap >= 0 && insertValue < arr[index-gap]) {
                         //把同组的前一个元素往后移动一个步长
                         arr[index] = arr[index - gap];

@@ -9,13 +9,14 @@ import java.util.Random;
 /**
  * @Author: Sen
  * @Date: 2020/1/14 16:54
- * @Description: 快速排序
+ * @Description: 快速排序,平均时间复杂度 O(n log n),最坏时间复杂度 O(n^2)
  */
 public class QuickSort {
 
     public static void main(String[] args) {
-        int[] arr = {-9, 78, 0, 23, -567, 70};
+        // int[] arr = {-9, 78, 0, 23, -567, 70};
         // int[] arr = {-9, 78, 0, 23, 0, 70};
+        int[] arr = {-9, 70, 0, 23, -576, 0};
         // int[] arr = {-9, 0, 0, 23, -576, 70};
         // int[] arr = new int[100_000_000];
         // Random random = new Random(System.currentTimeMillis());
@@ -25,6 +26,7 @@ public class QuickSort {
         // Instant start = Instant.now();
         // 快速排序实现1测试:100_000_000条数据花费时间：13S
         quickSort(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(arr));
         // 快速排序实现2测试:100_000_000条数据花费时间：10S
         // sort(arr, 0, arr.length - 1);
         // Instant end = Instant.now();
@@ -39,7 +41,7 @@ public class QuickSort {
      * @param end   结束位置
      */
     private static void quickSort(int[] arr, int start, int end) {
-        //第一趟排序
+        //第一趟排序 -9, 78, 0, 23, -576, 70
         //左边起始位置
         int left = start;
         //右边起始位置
@@ -66,14 +68,23 @@ public class QuickSort {
             arr[left] = arr[right];
             arr[right] = temp;
             //交换后如果左边遇到跟基准值相等的元素，right左移
+            // 交换前 -9, 70, 0, 23, -576, 0
+            //           |           |
+            // 交换后 -9, 0, 0, 23, -576, 70
             if (arr[left] == pivot) {
                 right--;
             }
-            //交换后如果右边边遇到跟基准值相等的元素，right右移
+            // 交换前 -9, 70, 0, 23, -576, 0
+            // 退出情况：       ||
+            // 交换后 -9, -576, 0, 23, 0, 70
+            //交换后如果右边遇到跟基准值相等的元素，left右移
             if (arr[right] == pivot) {
                 left++;
             }
         }
+        // 交换前 -9, 70, 0, 23, -576, 0
+        // 退出情况：       ||
+        // 交换后 -9, -576, 0, 23, 0, 70
         if (left == right) {
             left++;
             right--;
