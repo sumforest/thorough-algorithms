@@ -42,7 +42,7 @@ public class RadixSort {
         //位数决定轮数
         for (int i = 0, n = 1; i < maxBit; i++, n *= 10) {
             for (int value : arr) {
-                //取出每个元素的个、十、百、千等位
+                //取出每个元素的个、十、百、千等位 53, 3, 542, 748, 14, 214
                 int mod = value / n % 10;
                 //取模的的结果决定元素放入的桶,用于记录的以为数组的值决定放入桶中的位置
                 bucket[mod][record[mod]] = value;

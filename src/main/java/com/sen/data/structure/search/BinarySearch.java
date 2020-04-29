@@ -26,7 +26,12 @@ public class BinarySearch {
      * @return 不存在返回-1否则返回下标
      */
     private static int binarySearchOne(int[] arr, int left, int right, int target) {
-        //如果开始的位置超出了结束的位置结束查找，要查找的目标元素不存在
+        /*
+        如果开始的位置超出了结束的位置结束查找，要查找的目标元素不存在
+        |   |       |
+        3, 29, 75, 99, 200, 239, 239, 239
+        0   1   2   3   4    5    6    7
+        */
         if (left > right) {
             return -1;
         }

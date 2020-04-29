@@ -39,14 +39,14 @@ public class FibonacciSearch {
         //结束查找的位置
         int right = arr.length - 1;
         //分割的指针
-        int mid = 0;
+        int mid;
         //斐波那契数列使用它的特性来分割数组
         int[] fibonacci = createFibonacci();
         //记录斐波那契数组指针
         int k = 0;
         //产生一个符合斐波那契特性的数组 fibonacci[k] - 1 =  (fibonacci[k-1] - 1) + (fibonacci[k-2] - 1) + 1
         //其中fibonacci[k] - 1代表产生后的数组长度，fibonacci[k-1] - 1表示前半部分数组的长度，
-        // fibonacci[k-2] - 1后半数组的长度
+        // fibonacci[k-2] - 1 + 1后半数组的长度
         // 1 ->mid中间值
         while (right > fibonacci[k] - 1) {
             k++;
@@ -57,11 +57,13 @@ public class FibonacciSearch {
         for (int i = right + 1; i < temp.length; i++) {
             temp[i] = arr[right];
         }
-        //开始循环查超
+        //开始循环查询
         while (left <= right) {
             mid = left + fibonacci[k - 1] - 1;
             if (target < temp[mid]) {
-                //向左查找
+                // 1, 1, 2, 3
+                //              |
+                //向左查找 1, 8, 10, 89, 1000, 1234
                 right = mid - 1;
                 //总数组长度 fibonacci[k] - 1  = (fibonacci[k-1] - 1) + (fibonacci[k-2] - 1) + 1
                 //fibonacci[k-1] - 1代左半部分所以k--

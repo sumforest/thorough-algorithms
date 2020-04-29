@@ -21,7 +21,7 @@ public class ArrayBinaryTreeDemo {
     }
 
     private static class ArrayBinaryTree {
-        private int[] arr;
+        private final int[] arr;
 
         public ArrayBinaryTree(int[] arr) {
             this.arr = arr;

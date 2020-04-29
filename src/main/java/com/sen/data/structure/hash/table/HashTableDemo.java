@@ -43,6 +43,7 @@ public class HashTableDemo {
                 case "e":
                     scanner.close();
                     return;
+                default:
             }
         }
     }
@@ -142,7 +143,7 @@ public class HashTableDemo {
                 return;
             }
             while (cur.next != null) {
-                //没找到
+                //找到
                 if (cur.next.id == id) {
                     cur.next = cur.next.next;
                     return;

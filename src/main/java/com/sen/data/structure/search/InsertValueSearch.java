@@ -29,7 +29,7 @@ public class InsertValueSearch {
         if (left > right || target < arr[0] || target > arr[arr.length - 1]) {
             return -1;
         }
-        //与二分查找的主要区别
+        //与二分查找的主要区别,mid代码公式
         int mid = left + (target - arr[left]) * (right - left) / (arr[right] - arr[left]);
         int midValue = arr[mid];
         if (target > midValue) {
