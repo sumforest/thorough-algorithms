@@ -2,6 +2,8 @@ package com.sen.data.structure.huffman.tree;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+
 /**
  * @Author: Sen
  * @Date: 2020/1/18 15:22
@@ -48,7 +50,7 @@ public class HuffmanTree {
     }
 
     /**
-     * 实现comparable接口用于{@link java.util.stream.Collectors} 的sort()排序
+     * 实现comparable接口用于{@link Collections#sort(List)} 的sort()排序
      */
     public static class Node implements Comparable<Node> {
 
@@ -58,7 +60,8 @@ public class HuffmanTree {
 
         Node right;
 
-        public Node(int value) {
+        public Node(int value)
+        {
             this.value = value;
         }
 

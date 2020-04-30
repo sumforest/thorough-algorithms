@@ -48,7 +48,7 @@ public class ThreadedBinaryTreeDemo {
          */
         HeroNode pre;
 
-        HeroNode temp=new HeroNode(-1, "");
+        HeroNode temp = new HeroNode(-1, "");
 
         public ThreadedBinaryTree(HeroNode root) {
             this.root = root;
@@ -79,12 +79,12 @@ public class ThreadedBinaryTreeDemo {
             //当前节点的左指针为空，线索前驱节点
             if (node.left == null) {
                 node.left = pre;
-                node.leftType=1;
+                node.leftType = 1;
             }
             //前驱节点的不为空，并且前驱节点的右指针为空
             if (pre != null && pre.right == null) {
                 pre.right = node;
-                node.rightType =1;
+                node.rightType = 1;
             }
             //跟新前驱节点
             pre = node;
@@ -155,15 +155,22 @@ public class ThreadedBinaryTreeDemo {
             }
             //线索化左子树
             infixOrderThreadedBinaryTree(node.left);
-            //线索化当前节点
-            // 只有在当前节点的左指针为空时才线索化前驱节点
+            /*
+                                   1
+                                /     \
+                               3        6
+                              /  \      /
+                             8   10    14
+            线索化当前节点
+            只有在当前节点的左指针为空时才线索化前驱节点
+            */
             if (node.left == null) {
                 //把当前节点的左指针指向前驱节点
                 node.left = pre;
                 //修改做指针类型
                 node.leftType = 1;
             }
-            //在前去节点不为空时并且前驱节点的右指针为空，线索化当前节点的前驱节点的后继节点
+            //在前节点不为空时并且前驱节点的右指针为空，线索化当前节点的前驱节点的后继节点
             if (pre != null && pre.right == null) {
                 //把当前节点的指针指向前驱节点的后继节点
                 pre.right = node;
@@ -181,6 +188,15 @@ public class ThreadedBinaryTreeDemo {
          */
         public void print() {
             HeroNode cur = root;
+            /*
+                     1
+                  /     \
+                 3        6
+                /  \      /
+               8   10    14
+              / \
+             4  7
+             */
             while (cur != null) {
                 //查找当前节点的左子树，直到leftType = 1
                 while (cur.leftType == 0) {
@@ -192,16 +208,17 @@ public class ThreadedBinaryTreeDemo {
                 while (cur.rightType == 1) {
                     //把当前节点指向后去节点
                     cur = cur.right;
-                    //输出当前节点
+                    //输出后继节点
                     System.out.println(cur);
                 }
-                //当前节点没有后继节点时，把当前的节点指向当前节点的右节点
+                // 当前节点没有后继节点时，把当前的节点指向当前节点的右节点
                 cur = cur.right;
             }
         }
     }
 
     private static class HeroNode {
+
         int no;
 
         String name;

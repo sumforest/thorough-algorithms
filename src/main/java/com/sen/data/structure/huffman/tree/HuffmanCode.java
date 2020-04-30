@@ -1,7 +1,6 @@
 package com.sen.data.structure.huffman.tree;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -20,26 +19,37 @@ import java.util.Map;
  */
 public class HuffmanCode {
 
+    /**
+     * 存放生成的赫夫曼编码
+     */
+    private static Map<Byte, String> huffmanCodes = new HashMap<>();
+
+    /**
+     * 解压时，最后一位是否需要补位标记，true -- 补位，false -- 不补
+     */
+    private static boolean lastFlag = false;
+
     public static void main(String[] args) {
         // zipFile("f:/03.mp3", "f:/03.zip");
         // System.out.println("使用赫夫曼编码压缩文件完成");
-        unZipFile("f:/03.zip", "f:/04.mp3");
-        System.out.println("解压文件完毕");
+        // unZipFile("f:/03.zip", "f:/04.mp3");
+        // System.out.println("解压文件完毕");
 
         // unZipFile("f:/dst.zip", "f:/src2.bmp");
         // System.out.println("解压文件完毕");
         // zipFile("f:/src.bmp", "f:/dst.zip");
         // System.out.println("使用赫夫曼编码压缩文件完成");
-        /*
-        String message = "i like like like java do you like a java";
-        byte[] messageBytes = message.getBytes();
 
+        String message = "i like like like java do you like a java";
+        System.out.println(message.length());
+        byte[] messageBytes = message.getBytes();
         byte[] bytes = zipByHuffmanCode(messageBytes);
         byte[] decode = decode(huffmanCodes, bytes);
-        System.out.println(new String(decode).length());
-         */
-        // System.out.println("压缩后的字节数组：" + Arrays.toString(bytes));
-        // System.out.println("压缩后的字节数组长度：" + bytes.length);
+        System.out.println("压缩后的字节数组：" + Arrays.toString(bytes));
+        System.out.println("压缩后的字节数组长度：" + bytes.length);
+        System.out.println("压缩前字符串对应字节数组长度：" + messageBytes.length);
+        System.out.println("解压后：" + new String(decode).length());
+        System.out.println("解压后内容：" + new String(decode));
 
         /*//将原数据字节数组转换成对应的节点
         List<Node> nodes = toNodeList(messageBytes);
@@ -122,10 +132,14 @@ public class HuffmanCode {
             byte encode = encodeBytes[i];
             String code;
             if (i == encodeBytes.length - 1) {
-                code = byteToBinaryString(false, encode);
+                if (lastFlag) {
+                    code = byteToBinaryString(true, encode);
+                } else {
+                    code = byteToBinaryString(false,encode);
+                }
             } else {
-                //获取每个元素对应的二进制字符串
-                code = byteToBinaryString(true, encode);
+            //获取每个元素对应的二进制字符串
+            code = byteToBinaryString(true,encode);
             }
             //拼接字符串
             builder.append(code);
@@ -140,8 +154,9 @@ public class HuffmanCode {
             int count = 0;
             boolean flag = true;
             //从i开始匹配
-            while (flag && i+count < builder.length()) {
-                String code = builder.substring(i, i + count);//92153210
+            while (flag && i + count <= builder.length()) {
+                //92153210
+                String code = builder.substring(i, i + count);
                 Byte data = reverse.get(code);
                 if (data == null) {
                     //没有匹配到，移动count
@@ -165,7 +180,6 @@ public class HuffmanCode {
     /**
      * 将利用赫夫曼编码产生的byte数字转化成二进制字符串
      *
-     * @param flag 是否需要补全
      * @param code 需要转化成二进制字符串的数组
      * @return 二进制字符串
      */
@@ -177,8 +191,8 @@ public class HuffmanCode {
             temp |= 256;
         }
         String string = Integer.toBinaryString(temp);
-        if (flag) {
-            //截取后8个字符，因为是负数是计算机会进行补位，字符长度回超8
+        if (string.length() > 8) {
+            //截取后8个字符，因为是负数是计算机会进行补位，字符长度会超8
             string = string.substring(string.length() - 8);
         }
         return string;
@@ -199,12 +213,13 @@ public class HuffmanCode {
 
     /**
      * 用赫夫曼编码表压缩
-     * 赫夫曼编码表替换字符串数组之后：101010001011111111001000101111111100100010111111110010010100110111000111
+     * 赫夫曼编码表替换字符串数组之后：
+     * 101010001011111111001000101111111100100010111111110010010100110111000111
      * 0000011011101000111100101000101111111100110001001010011011100
      * 说明：10101000（补码），计算机存储用的是补码-->10101000-1 = 10100111（反码）->反码除符号位各位取反
      * -->11011000（源码）-->转成十进制=-88
      * 即bytesByHuffmanCode[0]-->11011000
-     * bytesByHuffmanCode对应的时机值是-88
+     * bytesByHuffmanCode对应的实际值是-88
      *
      * @param messageBytes 原字符串字节数组
      * @param huffmanCodes 根据原字节输出生成的赫夫曼编码表
@@ -221,6 +236,8 @@ public class HuffmanCode {
         int len;
         if (builder.length() % 8 == 0) {
             len = builder.length() / 8;
+            // 恰好能存下，解压时最后一位需要补位
+            lastFlag = true;
         } else {
             len = builder.length() / 8 + 1;
         }
@@ -241,10 +258,6 @@ public class HuffmanCode {
         return bytesByHuffmanCode;
     }
 
-    /**
-     * 存放生成的赫夫曼编码
-     */
-    private static Map<Byte, String> huffmanCodes = new HashMap<>();
 
     public static Map<Byte, String> createHuffmanCodes(Node node) {
         if (node == null) {
@@ -268,7 +281,7 @@ public class HuffmanCode {
             StringBuilder builder = new StringBuilder(stringBuilder);
             //拼接当前路径
             builder.append(code);
-            //处理叶子节点
+            //处理非叶子节点
             if (node.data == null) {
                 //向左遍历左子树
                 createHuffmanCodes(node.left, "0", builder);

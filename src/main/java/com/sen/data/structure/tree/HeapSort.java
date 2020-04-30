@@ -7,7 +7,7 @@ import java.util.Arrays;
 /**
  * @Author: Sen
  * @Date: 2020/1/17 00:10
- * @Description: 堆排序
+ * @Description: 堆排序，时间复杂度：最好、最坏、平均时间复杂度 O(n log n)，不稳定排序
  */
 public class HeapSort {
 
@@ -34,7 +34,7 @@ public class HeapSort {
         System.out.println(Arrays.toString(arr));*/
 
         //先构建大顶堆
-        //arr.length / 2 - 1表示最后一个非叶子节点的下标
+        //arr.length / 2 - 1表示最左一个非叶子节点的下标
         for (int i = arr.length / 2 - 1; i >= 0; i--) {
             //调整大顶堆
             adjustHeap(arr, i, arr.length);
@@ -61,8 +61,17 @@ public class HeapSort {
     public static void adjustHeap(int[] arr, int index, int length) {
         //临时变量保存调整前根节点的值
         int temp = arr[index];
+        // 从最左一个非叶子节点经行调整，交换后检查其子节点是否符合大顶堆规则
         for (int i = 2 * index + 1; i < length; i = 2 * i + 1) {
-            //当前节点的左子节点要小于右子节点
+            /*
+            * 当前节点的左子节点要小于右子节点 4, 6, 8, 5, 9
+            * 第一轮：    4        第二轮：       4
+            *          /  \                   / \
+            *         6    8                 9   8
+            *        / \                    / \
+            *        5  9                  5   6
+            * */
+            // 比较左、右子节点的值，将i指向最小节点
             if (i + 1 < length && arr[i] < arr[i + 1]) {
                 //把当前的指针指向右子节点
                 i++;
@@ -70,14 +79,14 @@ public class HeapSort {
             //当前节点的值比它的子节点的值要小，不符合大顶堆要求，调整
             if (temp < arr[i]) {
                 arr[index] = arr[i];
-                //把index指向i
+                // 以跟当前堆顶节点交换元素的下标最为堆顶
                 index = i;
             } else {
                 //调整的时候是从最后一个大顶堆开始按照从左到右、从下到上调整的，当前调整的就是最后一个节点
                 break;
             }
         }
-        //把temp赋给给最后和父节点交换的元素
+        //把temp赋给最后和父节点交换的元素
         arr[index] = temp;
     }
 }
