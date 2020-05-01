@@ -40,7 +40,7 @@ public class HuffmanCode {
         // zipFile("f:/src.bmp", "f:/dst.zip");
         // System.out.println("使用赫夫曼编码压缩文件完成");
 
-        String message = "i like like like java do you like a java";
+        /*String message = "i like like like java do you like a java";
         System.out.println(message.length());
         byte[] messageBytes = message.getBytes();
         byte[] bytes = zipByHuffmanCode(messageBytes);
@@ -50,7 +50,7 @@ public class HuffmanCode {
         System.out.println("压缩前字符串对应字节数组长度：" + messageBytes.length);
         System.out.println("解压后：" + new String(decode).length());
         System.out.println("解压后内容：" + new String(decode));
-
+*/
         /*//将原数据字节数组转换成对应的节点
         List<Node> nodes = toNodeList(messageBytes);
         //将节点集合转换成赫夫曼树
@@ -62,6 +62,10 @@ public class HuffmanCode {
         //根据赫夫曼编码表压缩原数据字节数组
         byte[] bytesByHuffmanCode = zip(messageBytes, huffmanCodes);
         System.out.println(bytesByHuffmanCode.length);*/
+
+        // 压缩文件
+        // zipFile("ASCII.gif", "ASCII.zip");
+        unZipFile("ASCII.zip","ascii2.gif");
     }
 
     /**
@@ -80,9 +84,9 @@ public class HuffmanCode {
             byte[] bytes = (byte[]) ois.readObject();
             //读取压缩文件中的赫夫曼编码表
             Map<Byte, String> huffmanCodes = (Map<Byte, String>) ois.readObject();
-            //解压问及那
+            //解压
             byte[] decode = decode(huffmanCodes, bytes);
-            //写入文件到问及那
+            //写入文件
             fos.write(decode);
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -109,9 +113,9 @@ public class HuffmanCode {
             fis.read(bytes);
             //使用赫夫曼编码压缩源文件字节数组
             byte[] zipBytes = zipByHuffmanCode(bytes);
-            //使用对象输出流把压缩后的字节数组写入目标文件
+            // 使用对象输出流把压缩后的字节数组写入目标文件
             oos.writeObject(zipBytes);
-            //把赫夫曼编码表写入目标文件
+            // 把赫夫曼编码表写入目标文件
             oos.writeObject(huffmanCodes);
         } catch (IOException e) {
             e.printStackTrace();

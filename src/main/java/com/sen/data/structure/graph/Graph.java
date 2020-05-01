@@ -13,7 +13,7 @@ public class Graph {
     /**
      * 图的顶点
      */
-    private ArrayList<String> vertexes;
+    private final ArrayList<String> vertexes;
 
     /**
      * 记录图的边的总数
@@ -21,14 +21,14 @@ public class Graph {
     private int numbersOfEdges;
 
     /**
-     * 描述顶点相邻关系的顶点
+     * 描述顶点相邻关系的邻接矩阵
      */
-    private int[][] edges;
+    private final int[][] edges;
 
     /**
      * 标记节点是否被访问，访问后标记为true
      */
-    private boolean[] isVisited;
+    private final boolean[] isVisited;
 
     /**
      * @param n 顶点的个数
@@ -42,7 +42,7 @@ public class Graph {
     /**
      * 添加顶点
      *
-     * @param vertex
+     * @param vertex 顶点
      */
     public void addVertex(String vertex) {
         vertexes.add(vertex);

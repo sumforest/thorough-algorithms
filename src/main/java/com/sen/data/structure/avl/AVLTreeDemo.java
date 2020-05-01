@@ -69,7 +69,7 @@ public class AVLTreeDemo {
         }
 
         /**
-         * 创建二叉排序树
+         * 创建平衡二叉排序树（AVL树）
          *
          * @param node
          */
@@ -85,6 +85,7 @@ public class AVLTreeDemo {
     }
 
     private static class Node {
+
         int value;
 
         Node left;
@@ -125,7 +126,17 @@ public class AVLTreeDemo {
          * @return 树的高度
          */
         public int height() {
-            return Math.max(this.left == null ? 0 : this.left.height(), this.right == null ? 0 : this.right.height()) + 1;
+            /*
+            *           10
+            *          /  \
+            *         7    11
+            *        / \
+            *       6   8
+            *            \
+            *             9
+            * */
+            return Math.max(this.left == null ? 0 : this.left.height()
+                    , this.right == null ? 0 : this.right.height()) + 1;
         }
 
         /**
@@ -150,6 +161,15 @@ public class AVLTreeDemo {
          * 平衡二叉树右旋转
          */
         public void rightRotate() {
+            /* 经过左旋转后：
+             *           10
+             *          /  \
+             *         8    11
+             *        / \
+             *       7   9
+             *      /
+             *     6
+             * */
             Node newNode = new Node(this.value);
             //把新节点的右子树设置位当前节点的右子树
             newNode.right = this.right;
@@ -184,7 +204,7 @@ public class AVLTreeDemo {
         }
 
         /**
-         * 创建二叉排序树
+         * 创建平衡二叉排序树（AVL树）
          *
          * @param node
          */
@@ -212,10 +232,11 @@ public class AVLTreeDemo {
                 }
             }
             //每添加一个节点检查是否需要进行旋转
+            // 需要进行左旋转
             if (rightHeight() - leftHeight() > 1) {
+                // 判断右子树的左子树和右子树的右子树的哪个高度大
                 if (this.right.leftHeight() > this.right.rightHeight()) {
-                    //满足左旋转条件时判断当前节点的右子节点的左子树高度是否大于右子树高度
-                    //满足对当前节点的右子树进行右旋转
+                    //左子树高度大，对当前节点的右子树进行右旋转
                     this.right.rightRotate();
                     //在对当前节点左旋转
                     leftRotate();
@@ -225,6 +246,16 @@ public class AVLTreeDemo {
                 }
                 return;
             }
+            /* 需要先左旋转再右旋转       只需要进行右旋
+             *           10                10
+             *          /  \              /  \
+             *         7    11           7    11
+             *        / \               / \
+             *       6   8             6   8
+             *            \           /
+             *             9         9
+             * */
+            // 需要进行右旋转
             if (leftHeight() - rightHeight() > 1) {
                 if (this.left.rightHeight() > this.left.leftHeight()) {
                     //满足右旋转条件时判断左子节点的右子树高度是否大于左子树高度，满足条件对当前节点的左子树进行左旋转

@@ -32,6 +32,7 @@ public class BinarySortTreeDemo {
     }
 
     private static class BinarySortTree {
+
         Node root;
 
         public void add(Node node) {
@@ -91,7 +92,7 @@ public class BinarySortTreeDemo {
             }
             //删除的节点是有两个子树
             else if (targetNode.left != null && targetNode.right != null) {
-                //查找当前节点子树的最小值
+                //查找当前节点右子树的最小值
                 int min = findMinValue(targetNode.right);
                 //把当前得点的父节点的值用最小值替换
                 targetNode.value = min;
@@ -205,7 +206,7 @@ public class BinarySortTreeDemo {
          */
         public Node findParentNode(int value) {
             //找到了父节点
-            if (this.left != null && this.left.value == value || this.right != null && this.right.value == value) {
+            if ((this.left != null && this.left.value == value) || (this.right != null && this.right.value == value)) {
                 return this;
             }
             if (this.left != null && this.value > value) {
@@ -238,7 +239,7 @@ public class BinarySortTreeDemo {
                     this.left.add(node);
                 }
             } else {
-                //当前节点的值比当前子树根节点的值大或者等于，挂在左边
+                //当前节点的值比当前子树根节点的值大或者等于，挂在右边
                 if (this.right == null) {
                     this.right = node;
                 } else {
