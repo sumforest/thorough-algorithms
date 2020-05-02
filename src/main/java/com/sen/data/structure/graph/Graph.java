@@ -139,6 +139,13 @@ public class Graph {
      * @param i         开始遍历顶点的下标
      */
     private void dfs(boolean[] isVisited, int i) {
+        /*   C -------B---------E
+         *    \      / \
+         *     \    /   \
+         *      \  /     \
+         *       \/       D
+         *       A
+         * */
         //输出当前顶点
         String str = vertexes.get(i);
         System.out.print(str + "->");
@@ -160,6 +167,7 @@ public class Graph {
      * 重载用于遍历当前顶点的邻接节点
      */
     public void dfs() {
+        // 使用循环避免因某个顶点不可大而漏了
         for (int i = 0; i < vertexes.size(); i++) {
             if (!isVisited[i]) {
                 //以当前顶点作为深度优先遍历算法的起始位置
@@ -184,7 +192,13 @@ public class Graph {
         //把当前已访问的顶点入队
         LinkedList<Integer> queue = new LinkedList<>();
         queue.addLast(i);
-
+        /*   C -------B---------E
+         *    \      / \
+         *     \    /   \
+         *      \  /     \
+         *       \/       D
+         *       A
+         * */
         while (!queue.isEmpty()) {
             //出队
             int u = queue.removeFirst();
@@ -208,7 +222,7 @@ public class Graph {
     /**
      * 每一个顶点都经行广度遍历算法
      */
-    public void bfs(){
+    public void bfs() {
         for (int i = 0; i < vertexes.size(); i++) {
             if (!isVisited[i]) {
                 bfs(isVisited, i);
