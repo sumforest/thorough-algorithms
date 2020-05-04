@@ -68,7 +68,7 @@ public class KruskalCase {
     }
 
     /**
-     * 获取顶点在顶点数组种的位置
+     * 获取顶点在顶点数组总的位置
      *
      * @param vertex 顶点
      * @return 反回顶点的下标, 不存在返回-1
@@ -105,7 +105,8 @@ public class KruskalCase {
     /**
      * 获取顶点下标为i的终点，用于后面判断两个顶点的终点是否相同
      *
-     * @param ends 记录了各个顶点对应的重点，在遍历过程种逐步变价
+     * @param ends 记录了各个顶点对应的终点，ends[i]表示下标=i的顶点的终点是下标=ends[i]的顶点
+     *             ，ends[i]=0表示没有终点。
      * @param i    顶点的下标
      * @return 终点的下标
      */
@@ -132,8 +133,17 @@ public class KruskalCase {
             int p1 = getPosition(eData[i].start);
             //对应边的第二个顶点
             int p2 = getPosition(eData[i].end);
-
+            /*
+            * <E, F> <C, D> <D, E> <B, F> <E, G> <A, B>
+            * */
             //第一个顶点的终点
+            /*  0, 0, 3, 5, 5, 0, 0
+                while (ends[i] != 0) {
+                    i = ends[i];
+                }
+                return i;
+            */
+            // 第一个顶点的终点
             int m = getEnd(ends, p1);
             //第二个顶点的终点
             int n = getEnd(ends, p2);

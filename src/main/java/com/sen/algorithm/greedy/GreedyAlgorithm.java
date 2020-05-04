@@ -67,21 +67,27 @@ public class GreedyAlgorithm {
                 temp.addAll(broadcasts.get(key));
                 //求电台的覆盖范围和需要覆盖的范围的交集
                 temp.retainAll(allAreas);
-                if (temp.size() > 0 && (maxKey == null || temp.size() > broadcasts.get(maxKey).size())) {
+                // 获取电台的最大交集--覆盖最多未覆盖地区的电台
+                HashSet<String> maxBroadcast;
+                if (maxKey != null) {
+                    maxBroadcast = broadcasts.get(maxKey);
+                    maxBroadcast.retainAll(allAreas);
+                }else {
+                    maxBroadcast = new HashSet<>();
+                }
+                // 当前电台覆盖地区比原先假定的电台覆盖地区多，当前电台作为最多覆盖地区电台
+                if (maxKey == null || temp.size() > maxBroadcast.size()) {
                     maxKey = key;
                 }
-                //把temp置空
+                // 清空临时集合
                 temp.clear();
             }
-            if (maxKey != null) {
                 //把电台保存到结果中
                 result.add(maxKey);
                 //把已覆盖的地区从未覆盖的地区移除
                 HashSet<String> removeSet = broadcasts.get(maxKey);
                 allAreas.removeAll(removeSet);
                 //把maxKey置空用于下一次使用
-                maxKey = null;
-            }
         }
 
         //输出结果

@@ -62,7 +62,7 @@ public class PrimAlgorithm {
          * @param index 开始生成最小生成树的顶点对应的下标
          */
         public void prim(Graph graph, int index) {
-            //定义一个二维数组数组标记是否已经被访问
+            //定义一个数组数组标记顶点是否已经被访问
             int[] flag = new int[graph.vertexes];
             //把当前顶点标记为已访问
             flag[index] = 1;
@@ -70,28 +70,39 @@ public class PrimAlgorithm {
             int minWeight = 10000;
             //已遍历过的顶点下标
             int h1 = -1;
-            //已遍历过的顶点到为变量过顶点的最小权值的顶点的下标
+            //已遍历过的顶点到未遍历过顶点中最小权值的顶点的下标
             int h2 = -1;
-            //普里姆算法：n个顶点生成n-1条边
+            /*
+                <A,G> 权值：2
+                <G,B> 权值：3
+                <G,E> 权值：4
+                <E,F> 权值：5
+                <F,D> 权值：4
+                <A,C> 权值：7
+             */
+            //普里姆算法：n个顶点生成n-1条边，构建最小生成树所有边
             for (int i = 1; i < graph.vertexes; i++) {
-                //遍历已访问过的顶点
+                // 遍历已访问过的顶点，以其为起始点寻找能到达顶点中权值最小的顶点
                 for (int j = 0; j < graph.vertexes; j++) {
-                    //遍历未访问过的顶点
+                    // 获取j顶点的所有邻接顶点
                     for (int k = 0; k < graph.vertexes; k++) {
                         int temp = graph.weight[j][k];
+                        // 顶点j已经被访问，k未被访问，并且存在最小权值
                         if (flag[j] == 1 && flag[k] == 0 && minWeight > temp) {
                             //交换最小的权值
                             minWeight = temp;
+                            // 记录当前顶点的下标
                             h1 = j;
+                            // 记录能到达的权值最小的顶点下标
                             h2 = k;
                         }
                     }
                 }
-                //每次遍历完之后的到一条边
+                // 每次遍历完之后得到一条边
                 System.out.println("<" + graph.data[h1] + "," + graph.data[h2] + ">" + " 权值：" + minWeight);
-                //并且把当前的边置为已访问
+                // 并且把当前的顶点的邻接顶点标记为已访问
                 flag[h2] = 1;
-                //把最小的权值重置
+                // 把最小的权值重置
                 minWeight = 10000;
             }
         }

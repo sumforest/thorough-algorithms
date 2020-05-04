@@ -6,6 +6,11 @@ import java.util.Arrays;
  * @Author: Sen
  * @Date: 2020/1/31 18:09
  * @Description: 迪杰斯特拉算法：解决最短路径问题
+ * 思想：
+ * 1.起始顶点开始遍历所有可达的顶点并且把权值保存到数组中
+ * 2.在起始顶点可达的顶点中选择权值（距离）最小的顶点作为途径顶点，遍历所有经过途径顶点可达的顶点，当前通过途径顶点可达
+ * 的顶点的权值比起始顶点直接可达的权值小则更新其为最小权值，并且把可到顶点的前驱节点记为途径顶点
+ * 3.如此循环直到所有节点遍历完，就得到连通网格中的最小生成树。
  */
 public class DijkstraAlgorithm {
 
@@ -26,7 +31,15 @@ public class DijkstraAlgorithm {
     }
 
     private static class Graph {
+
+        /**
+         * 顶点
+         */
         char[] vertexes;
+
+        /**
+         * 邻接矩阵
+         */
         int[][] matrix;
 
         public Graph(char[] vertexes, int[][] matrix) {
@@ -34,41 +47,79 @@ public class DijkstraAlgorithm {
             this.matrix = matrix;
         }
 
+        /**
+         * 输出邻接矩阵
+         */
         public void print() {
             for (int[] v : matrix) {
-                System.out.println(Arrays.toString(v));
+                for (int value : v) {
+                    System.out.printf("%8d", value);
+                }
+                System.out.println();
             }
         }
 
+        /**
+         * 迪杰斯特拉算法
+         *
+         * @param index 起始下标
+         */
         public void dijkstra(int index) {
             VisitedVertex visitedVertex = new VisitedVertex(vertexes.length, index);
+            // 以起始顶点为下标更新已访问顶点最短距离和前驱顶点
             update(index, visitedVertex);
+             /* 邻接矩阵
+                   65535       5       7   65535   65535   65535       2
+                       5   65535   65535       9   65535   65535       3
+                       7   65535   65535   65535       8   65535   65535
+                   65535       9   65535   65535   65535       4   65535
+                   65535   65535       8   65535   65535       5       4
+                   65535   65535   65535       4       5   65535       6
+                       2       3   65535   65535       4       6   65535
+             */
+            // 排除起始顶点，遍历剩下的顶点
             for (int i = 1; i < vertexes.length; i++) {
-                index = visitedVertex.updateArr();
+                // 选择未访问的，距离最短的顶点同时把该顶点标记为已访问
+                index = visitedVertex.getNextVertex();
+                // 以顶点为访问顶点，更新最短距离和前驱顶点
                 update(index, visitedVertex);
             }
             visitedVertex.show();
         }
 
         /**
-         * 更新出发顶点到其他顶点的最短距离和前驱顶点
+         * 更新下标为index顶点到其他顶点的最短距离和前驱顶点
          *
-         * @param index
+         * @param index         顶点下标
+         * @param visitedVertex 已访问过的顶点对应的描述类
          */
         private void update(int index, VisitedVertex visitedVertex) {
             for (int i = 0; i < matrix[index].length; i++) {
+                /* 邻接矩阵
+                   65535       5       7   65535   65535   65535       2
+                       5   65535   65535       9   65535   65535       3
+                       7   65535   65535   65535       8   65535   65535
+                   65535       9   65535   65535   65535       4   65535
+                   65535   65535       8   65535   65535       5       4
+                   65535   65535   65535       4       5   65535       6
+                       2       3   65535   65535       4       6   65535
+                 */
                 int len = visitedVertex.dis[index] + matrix[index][i];
-                if (!visitedVertex.isVisited(i) && len < visitedVertex.dis[i]) {
+                // 更新当前
+                if (visitedVertex.already_arr[i] == 0 && len < visitedVertex.dis[i]) {
                     //更新最短距离
-                    visitedVertex.updateDis(i, len);
+                    visitedVertex.dis[i] = len;
                     //更新前驱节点
-                    visitedVertex.updatePre(i, index);
+                    visitedVertex.pre_visited[i] = index;
                 }
             }
         }
 
     }
 
+    /**
+     * 描述已访问顶点的类
+     */
     private static class VisitedVertex {
         /**
          * 记录已访问的顶点,0未访问，1已访问
@@ -77,11 +128,14 @@ public class DijkstraAlgorithm {
 
         /**
          * 每个顶点的下标为对应的值为前一个顶点对应的下标
+         * pre_visited[index]表示下标为index这个顶点的前驱节点下标为pre_visited[index]
+         * 特别地起始顶点的前驱节点为它自己
          */
         int[] pre_visited;
 
         /**
          * 记录出发顶点到其他顶点的距离,默认为65535，顶点到自身顶点的距离为0；
+         * dis[index]表示到index这个顶点的距离为dis[index]
          */
         int[] dis;
 
@@ -92,13 +146,18 @@ public class DijkstraAlgorithm {
             //初始化数组
             Arrays.fill(this.dis, 65535);
             this.already_arr[index] = 1;
+            // 初始化当前顶点距离为0
             dis[index] = 0;
+            // 初始化起始顶点的前驱节点
+            pre_visited[index] = index;
         }
+
         /**
-         * 继续选择并返回新的访问顶点，比如G顶点访问后的顶点是A顶点最为新的访问顶点（注意不是出发点）
+         * 继续选择并返回距离最短的未访问顶点，比如G顶点访问后的顶点是A顶点为新的访问顶点（注意不是出发点）
+         *
          * @return 返回新访问顶点的下标
          */
-        public int updateArr() {
+        public int getNextVertex() {
             int min = 65535;
             int index = 0;
             for (int i = 0; i < already_arr.length; i++) {
@@ -112,7 +171,7 @@ public class DijkstraAlgorithm {
             return index;
         }
 
-        public void show(){
+        public void show() {
             System.out.println(Arrays.toString(already_arr));
             System.out.println(Arrays.toString(pre_visited));
             char[] vertexes = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
@@ -125,46 +184,6 @@ public class DijkstraAlgorithm {
                 }
                 index++;
             }
-        }
-
-        /**
-         * 判断index顶点是否被访问过
-         *
-         * @param index 顶点对应的下标
-         * @return 访问过返回true，否则返回false
-         */
-        public boolean isVisited(int index) {
-            return already_arr[index] == 1;
-        }
-
-        /**
-         * 更新出发顶点到index顶点的距离
-         *
-         * @param index 下标
-         * @param len   更新的而距离
-         */
-        public void updateDis(int index, int len) {
-            dis[index] = len;
-        }
-
-        /**
-         * 更新pre这个顶点的前驱节点是index这个顶点
-         *
-         * @param pre   当前顶点
-         * @param index 前驱顶点
-         */
-        public void updatePre(int pre, int index) {
-            pre_visited[pre] = index;
-        }
-
-        /**
-         * 返回出发顶点到index顶点的距离
-         *
-         * @param index
-         * @return
-         */
-        public int getDis(int index) {
-            return dis[index];
         }
     }
 }
