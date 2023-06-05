@@ -19,4 +19,10 @@ public class BinaryTest {
         StringBuilder stringBuilder = new StringBuilder("123456");
         System.out.println(stringBuilder.substring(0, 1));
     }
+
+    @Test
+    public void testChar() {
+        String str = "1111";
+        str.charAt(0);
+    }
 }

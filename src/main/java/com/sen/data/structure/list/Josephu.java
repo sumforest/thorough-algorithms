@@ -68,7 +68,7 @@ public class Josephu {
          * 解决约瑟夫问题,出列问题
          * @param k 第几个小孩开始数
          * @param m 每次数多少次
-         * @param count 一共由多少个小孩
+         * @param count 一共有多少个小孩
          */
         public void countBoy(int k, int m, int count) {
             if (k < 0 || m < 0 || m > count) {

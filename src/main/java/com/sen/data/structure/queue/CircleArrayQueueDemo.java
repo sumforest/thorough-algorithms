@@ -85,7 +85,7 @@ class CircleArrayQueue {
     }
 
     public boolean isFull() {
-        //是否达到数组最后一个元素
+        //是否达到数组最后一个元素,适配 rear = maxSize - 1 情况,front = 0；此时 rear + 1 = maxSize越界，取模处理rear范围在[0,maxSize-1]区间
         return (rear + 1) % maxSize == front;
     }
 
