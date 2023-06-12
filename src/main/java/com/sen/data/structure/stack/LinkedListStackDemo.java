@@ -15,7 +15,7 @@ public class LinkedListStackDemo {
         boolean flag = true;
         while (flag) {
             System.out.println("print:打印栈的信息");
-            System.out.println("push:压栈");
+            System.out.println("offer:压栈");
             System.out.println("pop:弹出栈顶元素");
             System.out.println("exit:退出程序");
             String command = scanner.next();
@@ -23,7 +23,7 @@ public class LinkedListStackDemo {
                 case "print":
                     stack.print();
                     break;
-                case "push":
+                case "offer":
                     System.out.println("请输入值:");
                     int value = scanner.nextInt();
                     stack.push(value);

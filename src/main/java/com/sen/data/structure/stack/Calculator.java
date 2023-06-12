@@ -54,7 +54,7 @@ public class Calculator {
             //ch为数字
             else {
                 //根据ASCII码表0的ASCII码为48
-                // numStack.push(ch - 48);
+                // numStack.offer(ch - 48);
                 // 当前为位是数字时不能直接入栈,还需要往后探一位是否也是数字位,不是数字位时才入栈
                 temp += ch;
                 //如果当前位已经是最后以位时直接入栈
